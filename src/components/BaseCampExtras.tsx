@@ -95,19 +95,6 @@ const questionCategories = [
   },
 ];
 
-const competitors = [
-  { name: 'Formsort', type: 'Form Builder' },
-  { name: 'Embeddables', type: 'Funnel Platform' },
-  { name: 'Typeform', type: 'Survey Tool' },
-  { name: 'Jotform', type: 'Form Builder' },
-];
-
-const advantages = [
-  { icon: '🏥', text: 'Built-in Clinical Protocol validation' },
-  { icon: '🔗', text: 'Native OLH platform integration' },
-  { icon: '⚡', text: 'Self-service configuration (no 2-month setup)' },
-  { icon: '🔒', text: 'HIPAA-compliant by design, not by add-on' },
-];
 
 export default function BaseCampExtras({ visible }: { visible: boolean }) {
   const [expandedCategory, setExpandedCategory] = useState<number | null>(null);
@@ -266,60 +253,6 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               </div>
             );
           })}
-        </div>
-      </div>
-
-      {/* ─── Competitor Snapshot ─── */}
-      <div
-        className={`transition-all duration-700 delay-600 ${
-          visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
-        }`}
-      >
-        <div className="flex items-center gap-3 mb-6">
-          <div
-            className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm"
-            style={{ backgroundColor: ACCENT }}
-          >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-            </svg>
-          </div>
-          <h4 className="text-lg font-bold text-slate-800">Competitor Snapshot</h4>
-        </div>
-
-        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-          <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-            {/* Current Solutions */}
-            <div className="p-6">
-              <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Current Solutions</h5>
-              <div className="flex flex-wrap gap-2">
-                {competitors.map((c) => (
-                  <span
-                    key={c.name}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 text-sm text-slate-600"
-                  >
-                    {c.name}
-                    <span className="text-xs text-slate-400">· {c.type}</span>
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            {/* Our Advantages */}
-            <div className="p-6">
-              <h5 className="text-sm font-bold uppercase tracking-wider mb-4" style={{ color: ACCENT }}>
-                Our Key Advantages
-              </h5>
-              <ul className="space-y-2.5">
-                {advantages.map((a, i) => (
-                  <li key={i} className="flex items-center gap-2.5 text-sm text-slate-700">
-                    <span className="text-base">{a.icon}</span>
-                    <span>{a.text}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
         </div>
       </div>
 
