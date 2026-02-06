@@ -101,12 +101,12 @@ const timelinePhases = [
 
 /* ── component ── */
 
-export default function FhirIntegration({ visible }: { visible: boolean }) {
+export default function FhirIntegration({ visible: _visible }: { visible: boolean }) {
   const [expanded, setExpanded] = useState(true);
   const [showSnippet, setShowSnippet] = useState(false);
 
   return (
-    <div className={`transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+    <div>
       <button onClick={() => setExpanded(!expanded)} className="flex items-center gap-3 mb-6 cursor-pointer">
         <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm" style={{ backgroundColor: ACCENT }}>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
@@ -118,7 +118,7 @@ export default function FhirIntegration({ visible }: { visible: boolean }) {
         </svg>
       </button>
 
-      <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-[20000px] opacity-100' : 'max-h-0 opacity-0'}`}>
+      <div className={`${expanded ? '' : 'hidden'}`}>
         <div className="space-y-8">
 
           {/* ── 1. What & Why ── */}
