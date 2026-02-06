@@ -3,6 +3,7 @@ import type { StationData } from '../data/stations';
 import BaseCampExtras from './BaseCampExtras';
 import BlueprintExtras from './BlueprintExtras';
 import MissionControlExtras from './MissionControlExtras';
+import WorkshopExtras from './WorkshopExtras';
 
 interface Props {
   station: StationData;
@@ -156,6 +157,9 @@ export default function StationDetail({ station, isEven }: Props) {
 
           {/* Extra content for Mission Control */}
           {station.id === 'mission-control' && <MissionControlExtras visible={visible} />}
+
+          {/* Extra content for The Workshop */}
+          {station.id === 'the-workshop' && <WorkshopExtras visible={visible} />}
         </div>
       </div>
     </section>
