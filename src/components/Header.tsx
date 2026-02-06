@@ -76,7 +76,7 @@ export default function Header() {
         >
           {[
             { value: '50', label: 'Day Timeline', icon: '📅' },
-            { value: '6', label: 'Key Phases', icon: '🎯' },
+            { value: '5', label: 'Key Phases', icon: '🎯' },
             { value: '3', label: 'Pilot Clients', icon: '🚀' },
           ].map((stat) => (
             <div
