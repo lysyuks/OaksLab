@@ -1,17 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 import { stations } from '../data/stations';
 
+const journeyStations = stations.filter(s => s.id !== 'fhir-integration');
+
 export default function JourneyPath() {
   const [activeStation, setActiveStation] = useState<string | null>(null);
   const [visibleNodes, setVisibleNodes] = useState<Set<number>>(new Set());
   const pathRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    // Stagger-animate station nodes when they come into view
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          stations.forEach((_, i) => {
+          journeyStations.forEach((_, i) => {
             setTimeout(() => {
               setVisibleNodes((prev) => new Set([...prev, i]));
             }, i * 200);
@@ -50,7 +51,7 @@ export default function JourneyPath() {
           </div>
 
           <div className="relative z-10 flex justify-between px-[5%]">
-            {stations.map((station, i) => (
+            {journeyStations.map((station, i) => (
               <button
                 key={station.id}
                 onClick={() => handleStationClick(station.id)}
@@ -109,7 +110,7 @@ export default function JourneyPath() {
           </div>
 
           <div className="space-y-8">
-            {stations.map((station, i) => (
+            {journeyStations.map((station, i) => (
               <button
                 key={station.id}
                 onClick={() => handleStationClick(station.id)}
