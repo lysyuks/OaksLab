@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { StationData } from '../data/stations';
+import BaseCampExtras from './BaseCampExtras';
 
 interface Props {
   station: StationData;
@@ -144,6 +145,9 @@ export default function StationDetail({ station, isEven }: Props) {
               </ul>
             </div>
           </div>
+
+          {/* Extra content for Base Camp */}
+          {station.id === 'base-camp' && <BaseCampExtras visible={visible} />}
         </div>
       </div>
     </section>
