@@ -6,7 +6,7 @@ const rolloutPhases = [
   {
     phase: 1,
     title: 'Soft Launch — Limited Pilot',
-    timing: 'Week 22',
+    timing: 'Week 29',
     target: '2–3 Pilot Clients',
     color: '#f59e0b',
     clients: [
@@ -21,7 +21,7 @@ const rolloutPhases = [
   {
     phase: 2,
     title: 'Limited Release — Expand',
-    timing: 'Weeks 23–25',
+    timing: 'Weeks 30–32',
     target: '10–15 Clients Total',
     color: '#2563eb',
     clients: [],
@@ -32,7 +32,7 @@ const rolloutPhases = [
   {
     phase: 3,
     title: 'General Availability — Full Rollout',
-    timing: 'Week 26+',
+    timing: 'Week 33+',
     target: 'All OLH Clients (50–100)',
     color: '#059669',
     clients: [],
@@ -60,14 +60,14 @@ const rollbackSteps = [
 ];
 
 const commsTimeline = [
-  { week: 20, label: 'Internal team announcement (all-hands)', color: '#64748b' },
-  { week: 21, label: 'Pilot clients invitation', color: '#7c3aed' },
-  { week: 22, label: 'Pilot launch + daily updates', color: '#f59e0b' },
-  { week: 23, label: 'Pilot success metrics shared internally', color: '#f59e0b' },
-  { week: 24, label: 'Limited release invitations sent', color: '#2563eb' },
-  { week: 25, label: 'Pre-launch announcement to all clients', color: '#2563eb' },
-  { week: 26, label: 'General availability launch 🚀', color: '#059669' },
-  { week: 27, label: 'Weekly product updates newsletter', color: '#059669' },
+  { week: 27, label: 'Internal team announcement (all-hands)', color: '#64748b' },
+  { week: 28, label: 'Pilot clients invitation', color: '#7c3aed' },
+  { week: 29, label: 'Pilot launch + daily updates', color: '#f59e0b' },
+  { week: 30, label: 'Pilot success metrics shared internally', color: '#f59e0b' },
+  { week: 31, label: 'Limited release invitations sent', color: '#2563eb' },
+  { week: 32, label: 'Pre-launch announcement to all clients', color: '#2563eb' },
+  { week: 33, label: 'General availability launch 🚀', color: '#059669' },
+  { week: 34, label: 'Weekly product updates newsletter', color: '#059669' },
 ];
 
 export default function GTMRollout({ visible }: { visible: boolean }) {

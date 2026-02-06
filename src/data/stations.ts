@@ -19,7 +19,7 @@ export const stations: StationData[] = [
     emoji: '⛺',
     title: 'Kickoff',
     subtitle: 'Stakeholder Alignment',
-    timeline: 'Day 1–3',
+    timeline: 'Weeks 1–2',
     description:
       'Align all stakeholders on the vision, define success metrics, and establish the team structure. This is where we set the foundation for the entire project.',
     deliverables: [
@@ -42,7 +42,7 @@ export const stations: StationData[] = [
     emoji: '📐',
     title: 'Scope & Schedule',
     subtitle: 'Project Planning',
-    timeline: 'Day 4–10',
+    timeline: 'Weeks 3–5',
     description:
       'Define the full project scope, system architecture, and technical decisions. Translate the vision into concrete engineering plans.',
     deliverables: [
@@ -66,7 +66,7 @@ export const stations: StationData[] = [
     emoji: '🎯',
     title: 'Discovery',
     subtitle: 'Protocol & Team Collaboration',
-    timeline: 'Day 11–20',
+    timeline: 'Weeks 3–5',
     description:
       'Deep-dive into existing clinical protocols and map every eligibility rule, screening instrument, and treatment pathway into structured, machine-readable configuration.',
     deliverables: [
@@ -88,22 +88,24 @@ export const stations: StationData[] = [
     id: 'the-workshop',
     number: 4,
     emoji: '🔧',
-    title: 'Specifications',
-    subtitle: 'Requirements & Handoff',
-    timeline: 'Day 21–40',
+    title: 'Development',
+    subtitle: 'Specifications & Build',
+    timeline: 'Weeks 6–24',
     description:
-      'Build the core platform — the visual funnel builder, patient-facing renderer, and all backend integrations. This is the heavy engineering sprint.',
+      'Define detailed specifications, hand off to engineering, and build the complete platform. This phase includes requirements documentation, development sprints, and integration work.',
     deliverables: [
+      'User story specs with acceptance criteria',
       'Visual funnel builder (drag-and-drop)',
       'Patient-facing funnel renderer',
       'Protocol-to-funnel auto-generation',
       'EHR/scheduling/payment integrations',
     ],
     details: [
-      'Build the no-code builder with branching logic editor',
-      'Create the embeddable renderer with adaptive questioning',
-      '"Generate from Protocol" — one-click funnel creation from clinical rules',
-      'Integrate with OpenLoop\'s existing EHR, Healthie, and payment stack',
+      'Specifications phase (Weeks 6–8): User stories, wireframes, API contracts, technical handoff',
+      'Development sprints (Weeks 9–24): 2-week sprints with daily standups, biweekly reviews',
+      'Sprints 1–4: Funnel Builder Engine + Clinical Protocol Validator',
+      'Sprints 5–8: Client Portal + Integration Layer',
+      'Sprints 9–12: Patient Forms + Analytics',
     ],
     gradient: 'from-amber-500 to-orange-500',
     accentColor: '#f59e0b',
@@ -114,7 +116,7 @@ export const stations: StationData[] = [
     emoji: '🚀',
     title: 'Testing & Rollout',
     subtitle: 'Launch Strategy',
-    timeline: 'Day 41–50',
+    timeline: 'Weeks 25–30',
     description:
       'Rigorous testing of all clinical paths, compliance validation, performance optimization, and phased rollout to pilot clients.',
     deliverables: [
@@ -124,10 +126,10 @@ export const stations: StationData[] = [
       'Pilot client launch (3 funnels)',
     ],
     details: [
-      'Automated testing of every branching path for clinical correctness',
-      'Load testing and performance optimization',
-      'Security audit and HIPAA compliance validation',
-      'Launch with 3 pilot clients, monitor, and iterate',
+      'QA testing and functional validation (Weeks 25–26)',
+      'Security audit and HIPAA compliance (Week 27)',
+      'UAT with pilot clients (Week 28)',
+      'Soft launch and phased rollout (Weeks 29–30+)',
     ],
     gradient: 'from-rose-500 to-red-500',
     accentColor: '#ef4444',

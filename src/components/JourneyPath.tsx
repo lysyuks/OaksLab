@@ -38,7 +38,7 @@ export default function JourneyPath() {
           The Journey
         </h2>
         <p className="text-center text-slate-500 mb-16 max-w-xl mx-auto">
-          Five stations from kickoff to launch. Click any station to explore.
+          Five stations across 30 weeks. Click any station to explore.
         </p>
 
         {/* Desktop: horizontal path */}

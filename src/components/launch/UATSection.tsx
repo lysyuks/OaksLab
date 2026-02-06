@@ -86,7 +86,7 @@ export default function UATSection({ visible }: { visible: boolean }) {
           </svg>
         </div>
         <h4 className="text-lg font-bold text-slate-800">UAT Preparation & Execution</h4>
-        <span className="text-xs text-slate-400 ml-1">Weeks 20–21</span>
+        <span className="text-xs text-slate-400 ml-1">Week 28</span>
         <svg className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
@@ -146,7 +146,7 @@ export default function UATSection({ visible }: { visible: boolean }) {
         </div>
 
         {/* Execution Calendar */}
-        <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-3">UAT Execution (Week 21)</h5>
+        <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-3">UAT Execution (Week 28)</h5>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-6">
           {uatDays.map((d, i) => (
             <div key={i} className="bg-white rounded-xl border border-slate-100 shadow-sm overflow-hidden">
