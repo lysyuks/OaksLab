@@ -59,7 +59,7 @@ export default function Header() {
         >
           {[
             { value: '50', label: 'Day Timeline' },
-            { value: '5', label: 'Key Phases' },
+            { value: '6', label: 'Key Phases' },
             { value: '3', label: 'Pilot Clients' },
           ].map((stat) => (
             <div key={stat.label} className="text-center">

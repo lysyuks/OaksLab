@@ -5,6 +5,7 @@ import BlueprintExtras from './BlueprintExtras';
 import MissionControlExtras from './MissionControlExtras';
 import WorkshopExtras from './WorkshopExtras';
 import LaunchPadExtras from './LaunchPadExtras';
+import FhirExtras from './FhirExtras';
 
 interface Props {
   station: StationData;
@@ -164,6 +165,9 @@ export default function StationDetail({ station, isEven }: Props) {
 
           {/* Extra content for Launch Pad */}
           {station.id === 'launch-pad' && <LaunchPadExtras visible={visible} />}
+
+          {/* Extra content for FHIR Integration */}
+          {station.id === 'fhir-integration' && <FhirExtras visible={visible} />}
         </div>
       </div>
     </section>

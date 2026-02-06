@@ -133,4 +133,28 @@ export const stations: StationData[] = [
     gradient: 'from-rose-500 to-red-500',
     accentColor: '#ef4444',
   },
+  {
+    id: 'fhir-integration',
+    number: 6,
+    emoji: '📋',
+    title: 'FHIR R4 Integration',
+    subtitle: 'Interoperability & EHR Data Exchange',
+    timeline: 'Weeks 18–26',
+    description:
+      'Enabling seamless data exchange with EHR systems through healthcare standards. Automatically send intake form data to doctors\' EHR systems (Epic, Cerner, Athena) in standardized FHIR format.',
+    deliverables: [
+      'FHIR R4 mapping engine',
+      'RESTful FHIR API with OAuth 2.0',
+      'Mapping configuration UI for clients',
+      'Template library for common use cases',
+    ],
+    details: [
+      'Transform form submissions into FHIR R4 resources (Patient, Observation, Condition, etc.)',
+      'Build push/pull integration with major EHR systems',
+      'Create drag-and-drop mapping interface for client admins',
+      'Validate all outputs against FHIR R4 standard before transmission',
+    ],
+    gradient: 'from-teal-500 to-cyan-500',
+    accentColor: '#0d9488',
+  },
 ];
