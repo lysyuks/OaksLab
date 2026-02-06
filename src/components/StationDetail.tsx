@@ -4,6 +4,7 @@ import BaseCampExtras from './BaseCampExtras';
 import BlueprintExtras from './BlueprintExtras';
 import MissionControlExtras from './MissionControlExtras';
 import WorkshopExtras from './WorkshopExtras';
+import LaunchPadExtras from './LaunchPadExtras';
 
 interface Props {
   station: StationData;
@@ -160,6 +161,9 @@ export default function StationDetail({ station, isEven }: Props) {
 
           {/* Extra content for The Workshop */}
           {station.id === 'the-workshop' && <WorkshopExtras visible={visible} />}
+
+          {/* Extra content for Launch Pad */}
+          {station.id === 'launch-pad' && <LaunchPadExtras visible={visible} />}
         </div>
       </div>
     </section>
