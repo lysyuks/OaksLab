@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { StationData } from '../data/stations';
 import BaseCampExtras from './BaseCampExtras';
+import BlueprintExtras from './BlueprintExtras';
 
 interface Props {
   station: StationData;
@@ -148,6 +149,9 @@ export default function StationDetail({ station, isEven }: Props) {
 
           {/* Extra content for Base Camp */}
           {station.id === 'base-camp' && <BaseCampExtras visible={visible} />}
+
+          {/* Extra content for The Blueprint */}
+          {station.id === 'the-blueprint' && <BlueprintExtras visible={visible} />}
         </div>
       </div>
     </section>
