@@ -31,7 +31,6 @@ export const stations: StationData[] = [
     details: [
       'Define the "why" — why OpenLoop needs to own this piece of the stack',
       'Map current pain points with Formsort/Embeddables in detail',
-      'Identify the first 3 client funnels to migrate as pilots',
       'Agree on MVP scope vs. future phases',
     ],
     gradient: 'from-teal-500 to-teal-600',

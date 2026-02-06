@@ -43,6 +43,7 @@ const days = [
       'Risk identification & mitigation',
       'Pilot client selection',
       'Roadmap & next steps',
+      '🍺 Beer at Prague\u2019s pub DVA Kohouti',
     ],
   },
 ];
