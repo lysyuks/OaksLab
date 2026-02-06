@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+const BRAND = '#e90c54';
+
 export default function Header() {
   const [visible, setVisible] = useState(false);
 
@@ -9,64 +11,84 @@ export default function Header() {
   }, []);
 
   return (
-    <header className="relative overflow-hidden bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900 text-white">
+    <header className="relative overflow-hidden text-white" style={{ background: 'linear-gradient(135deg, #0f0f1a 0%, #1a1a2e 40%, #16213e 70%, #0f0f1a 100%)' }}>
       {/* Animated background grid */}
-      <div className="absolute inset-0 opacity-10">
+      <div className="absolute inset-0 opacity-[0.04]">
         <div
           className="absolute inset-0"
           style={{
             backgroundImage:
-              'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)',
-            backgroundSize: '60px 60px',
+              'linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)',
+            backgroundSize: '50px 50px',
           }}
         />
       </div>
 
-      {/* Floating orbs */}
-      <div className="absolute top-20 left-20 w-72 h-72 bg-teal-500/20 rounded-full blur-3xl" />
-      <div className="absolute bottom-10 right-20 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
+      {/* Glowing orbs */}
+      <div className="absolute top-10 left-[10%] w-80 h-80 rounded-full blur-[120px]" style={{ backgroundColor: BRAND, opacity: 0.12 }} />
+      <div className="absolute bottom-0 right-[15%] w-96 h-96 rounded-full blur-[140px]" style={{ backgroundColor: '#6366f1', opacity: 0.08 }} />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full blur-[200px]" style={{ backgroundColor: BRAND, opacity: 0.05 }} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-28 text-center">
+      {/* Decorative lines */}
+      <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg, transparent, ${BRAND}40, transparent)` }} />
+      <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg, transparent, ${BRAND}30, transparent)` }} />
+
+      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-32 text-center">
         {/* Badge */}
         <div
-          className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-teal-500/20 border border-teal-400/30 text-teal-300 text-sm font-medium mb-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          style={{ backgroundColor: `${BRAND}18`, border: `1px solid ${BRAND}40`, color: '#ff6b8a' }}
         >
-          <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse" />
-          Project Roadmap 2025
+          <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: BRAND }} />
+          Project Roadmap 2026
         </div>
 
         {/* Title */}
         <h1
-          className={`text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           <span className="text-white">OpenLoop Health</span>
           <br />
-          <span className="bg-gradient-to-r from-teal-300 to-blue-400 bg-clip-text text-transparent">
+          <span
+            className="bg-clip-text text-transparent"
+            style={{ backgroundImage: `linear-gradient(135deg, ${BRAND}, #ff6b8a, #ff8fa3)` }}
+          >
             Funnel Builder
           </span>
         </h1>
 
         {/* Subtitle */}
         <p
-          className={`mt-6 text-xl md:text-2xl text-slate-300 font-light max-w-2xl mx-auto transition-all duration-700 delay-400 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`mt-6 text-xl md:text-2xl font-light max-w-2xl mx-auto transition-all duration-700 delay-400 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          style={{ color: 'rgba(255,255,255,0.55)' }}
         >
-          From Vision to Launch — Your Roadmap
+          From Vision to Launch — Roadmap
         </p>
+
+        {/* Divider */}
+        <div className={`mt-10 mb-10 flex justify-center transition-all duration-700 delay-500 ${visible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}>
+          <div className="h-px w-32" style={{ background: `linear-gradient(90deg, transparent, ${BRAND}, transparent)` }} />
+        </div>
 
         {/* Stats row */}
         <div
-          className={`mt-12 flex flex-wrap justify-center gap-8 md:gap-16 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`flex flex-wrap justify-center gap-6 md:gap-12 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {[
-            { value: '50', label: 'Day Timeline' },
-            { value: '6', label: 'Key Phases' },
-            { value: '3', label: 'Pilot Clients' },
+            { value: '50', label: 'Day Timeline', icon: '📅' },
+            { value: '6', label: 'Key Phases', icon: '🎯' },
+            { value: '3', label: 'Pilot Clients', icon: '🚀' },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
+            <div
+              key={stat.label}
+              className="text-center px-6 py-4 rounded-2xl"
+              style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
+            >
+              <div className="text-lg mb-1">{stat.icon}</div>
               <div className="text-3xl md:text-4xl font-bold text-white">
                 {stat.value}
               </div>
-              <div className="text-sm text-slate-400 mt-1">{stat.label}</div>
+              <div className="text-xs font-medium uppercase tracking-wider mt-1" style={{ color: 'rgba(255,255,255,0.4)' }}>{stat.label}</div>
             </div>
           ))}
         </div>
@@ -81,7 +103,10 @@ export default function Header() {
                 .getElementById('journey')
                 ?.scrollIntoView({ behavior: 'smooth' })
             }
-            className="group inline-flex flex-col items-center gap-2 text-slate-400 hover:text-teal-300 transition-colors cursor-pointer"
+            className="group inline-flex flex-col items-center gap-2 transition-colors cursor-pointer"
+            style={{ color: 'rgba(255,255,255,0.35)' }}
+            onMouseEnter={(e) => { e.currentTarget.style.color = '#ff6b8a'; }}
+            onMouseLeave={(e) => { e.currentTarget.style.color = 'rgba(255,255,255,0.35)'; }}
           >
             <span className="text-sm font-medium">Explore the Journey</span>
             <svg
