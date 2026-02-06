@@ -73,9 +73,8 @@ export default function JourneyPath() {
                     }`}
                     style={{
                       background: `linear-gradient(135deg, ${station.accentColor}15, ${station.accentColor}30)`,
-                      borderColor: station.accentColor,
                       border: `2px solid ${station.accentColor}`,
-                      ringColor: station.accentColor,
+                      boxShadow: activeStation === station.id ? `0 0 0 4px ${station.accentColor}40` : undefined,
                     }}
                   >
                     <span className="animate-float" style={{ animationDelay: `${i * 0.3}s` }}>
