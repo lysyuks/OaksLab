@@ -1,28 +1,6 @@
-import { Component, useState } from 'react';
-import type { ReactNode } from 'react';
-
-/* ── Error Boundary ── */
-class FhirErrorBoundary extends Component<{ children: ReactNode }, { error: string | null }> {
-  state = { error: null as string | null };
-  static getDerivedStateFromError(err: Error) {
-    return { error: err.message };
-  }
-  render() {
-    if (this.state.error) {
-      return (
-        <div className="bg-red-100 border-2 border-red-400 text-red-800 p-6 rounded-2xl">
-          <p className="font-bold text-lg mb-2">FHIR Section Error:</p>
-          <pre className="text-sm whitespace-pre-wrap">{this.state.error}</pre>
-        </div>
-      );
-    }
-    return this.props.children;
-  }
-}
+import { useState } from 'react';
 
 const ACCENT = '#0d9488';
-
-/* ── data ── */
 
 const benefits = [
   'No manual data entry (saves 15 min/patient)',
@@ -45,7 +23,7 @@ const impactItems = [
   { label: 'For Doctors', value: 'Automatic data in their EHR', icon: '🩺' },
 ];
 
-const formData = [
+const formFields = [
   'Name: Jane Smith',
   'DOB: 1985-03-15',
   'Weight: 180 lbs',
@@ -65,8 +43,6 @@ const fhirResources = [
   { num: 6, resource: 'Observation', desc: 'PHQ-9 score: 8' },
   { num: 7, resource: 'Goal', desc: 'target weight: 150 lbs' },
 ];
-
-const fhirSnippet = '{\n  "resourceType": "Patient",\n  "name": [{ "text": "Jane Smith" }],\n  "birthDate": "1985-03-15"\n}';
 
 const mappingRows = [
   { field: 'Full Name', fhir: 'Patient.name' },
@@ -102,10 +78,10 @@ const resourceTable = [
 ];
 
 const risks = [
-  { level: 'high', title: 'Complexity', why: 'FHIR is technical', mit: 'Templates, auto-suggestions, training' },
-  { level: 'high', title: 'EHR API Limits', why: 'Rate limiting', mit: 'Queue system, retry logic' },
-  { level: 'critical', title: 'Mapping Errors', why: 'Wrong data could affect care', mit: 'Validation, preview mode, testing' },
-  { level: 'high', title: 'Adoption', why: 'Clients may find it complex', mit: 'Make optional initially, show ROI' },
+  { critical: false, title: 'Complexity', why: 'FHIR is technical', mit: 'Templates, auto-suggestions, training' },
+  { critical: false, title: 'EHR API Limits', why: 'Rate limiting', mit: 'Queue system, retry logic' },
+  { critical: true, title: 'Mapping Errors', why: 'Wrong data could affect care', mit: 'Validation, preview mode, testing' },
+  { critical: false, title: 'Adoption', why: 'Clients may find it complex', mit: 'Make optional initially, show ROI' },
 ];
 
 const timelinePhases = [
@@ -115,11 +91,8 @@ const timelinePhases = [
   { name: 'FHIR Testing', weeks: 'Wk 25-26', start: 25, end: 26, color: '#f59e0b' },
 ];
 
-/* ── component ── */
-
-function FhirContent({ visible }: { visible: boolean }) {
+export default function FhirIntegration({ visible }: { visible: boolean }) {
   const [expanded, setExpanded] = useState(true);
-  const [showSnippet, setShowSnippet] = useState(false);
 
   return (
     <div className={`transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -127,7 +100,7 @@ function FhirContent({ visible }: { visible: boolean }) {
         <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-sm" style={{ backgroundColor: ACCENT }}>
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7h12m0 0l-4-4m4 4l-4 4m0 6H4m0 0l4 4m-4-4l4-4" /></svg>
         </div>
-        <h4 className="text-lg font-bold text-slate-800">FHIR R4 Integration &amp; Interoperability</h4>
+        <h4 className="text-lg font-bold text-slate-800">FHIR R4 Integration</h4>
         <span className="text-xs font-medium ml-1" style={{ color: ACCENT }}>Healthcare data exchange standard</span>
         <svg className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${expanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -137,15 +110,15 @@ function FhirContent({ visible }: { visible: boolean }) {
       {expanded && (
         <div className="space-y-8">
 
-          {/* 1. What & Why */}
-          <div className="rounded-2xl p-5 border" style={{ backgroundColor: '#f0fdfa80', borderColor: '#99f6e4' }}>
+          {/* 1. What is FHIR */}
+          <div className="rounded-2xl p-5 border" style={{ backgroundColor: '#f0fdfa', borderColor: '#99f6e4' }}>
             <h5 className="font-bold text-sm mb-2" style={{ color: '#115e59' }}>What is FHIR R4?</h5>
             <p className="text-sm text-slate-600 leading-relaxed mb-4">
-              <span className="font-bold" style={{ color: '#0f766e' }}>FHIR R4 (Fast Healthcare Interoperability Resources)</span> is the healthcare industry standard for exchanging patient data between systems. It enables automatic transfer of intake form data to doctors&apos; EHR systems (Epic, Cerner, Athena) in a standardized format.
+              <strong style={{ color: '#0f766e' }}>FHIR R4 (Fast Healthcare Interoperability Resources)</strong> is the healthcare industry standard for exchanging patient data between systems. It enables automatic transfer of intake form data to EHR systems (Epic, Cerner, Athena) in a standardized format.
             </p>
             <div className="flex flex-wrap gap-2">
               {benefits.map((b, i) => (
-                <span key={i} className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium" style={{ backgroundColor: '#ccfbf199', color: '#0f766e' }}>
+                <span key={i} className="inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium" style={{ backgroundColor: '#ccfbf1', color: '#0f766e' }}>
                   <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                   {b}
                 </span>
@@ -153,7 +126,7 @@ function FhirContent({ visible }: { visible: boolean }) {
             </div>
           </div>
 
-          {/* 2. Impact on Scope */}
+          {/* 2. Scope Impact */}
           <div>
             <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Impact on Project Scope</h5>
             <div className="grid md:grid-cols-2 gap-5">
@@ -170,7 +143,14 @@ function FhirContent({ visible }: { visible: boolean }) {
                       </div>
                       <span className="text-xs font-bold px-2 py-0.5 rounded-full" style={{ backgroundColor: '#f0fdfa', color: '#0f766e' }}>{ep.dur}</span>
                     </div>
-                    <ul className="space-y-1">{ep.items.map((it, j) => (<li key={j} className="flex items-start gap-2 text-xs text-slate-600"><span className="mt-1 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: '#14b8a6' }} />{it}</li>))}</ul>
+                    <ul className="space-y-1">
+                      {ep.items.map((it, j) => (
+                        <li key={j} className="flex items-start gap-2 text-xs text-slate-600">
+                          <span className="mt-1 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: '#14b8a6' }} />
+                          {it}
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                 ))}
               </div>
@@ -180,7 +160,10 @@ function FhirContent({ visible }: { visible: boolean }) {
                   {impactItems.map((im, i) => (
                     <div key={i} className="flex items-start gap-3 text-sm">
                       <span className="text-lg">{im.icon}</span>
-                      <div><span className="font-semibold text-slate-800">{im.label}:</span><span className="text-slate-500 ml-1">{im.value}</span></div>
+                      <div>
+                        <span className="font-semibold text-slate-800">{im.label}:</span>
+                        <span className="text-slate-500 ml-1">{im.value}</span>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -188,13 +171,17 @@ function FhirContent({ visible }: { visible: boolean }) {
             </div>
           </div>
 
-          {/* 3. Example: Form to FHIR */}
+          {/* 3. Form to FHIR Example */}
           <div>
             <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Example: Intake Form to FHIR Resources</h5>
             <div className="grid md:grid-cols-2 gap-4 items-start">
               <div className="rounded-xl p-4 border" style={{ backgroundColor: '#fffbeb', borderColor: '#fde68a' }}>
                 <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#d97706' }}>Patient Fills Out</div>
-                <ul className="space-y-1">{formData.map((d, i) => (<li key={i} className="text-sm text-slate-700 font-mono">{d}</li>))}</ul>
+                <ul className="space-y-1">
+                  {formFields.map((d, i) => (
+                    <li key={i} className="text-sm text-slate-700 font-mono">{d}</li>
+                  ))}
+                </ul>
               </div>
               <div className="rounded-xl p-4 border" style={{ backgroundColor: '#f0fdfa', borderColor: '#99f6e4' }}>
                 <div className="text-xs font-bold uppercase tracking-wider mb-2" style={{ color: '#0d9488' }}>System Creates 7 FHIR Resources</div>
@@ -208,20 +195,9 @@ function FhirContent({ visible }: { visible: boolean }) {
                   ))}
                 </ul>
                 <div className="mt-3 pt-2 text-xs font-medium" style={{ borderTop: '1px solid #99f6e4', color: '#0d9488' }}>
-                  All packaged in a <span className="font-bold">FHIR Bundle</span> &rarr; Sent to doctor&apos;s EHR via API
+                  All packaged in a <strong>FHIR Bundle</strong> → Sent to EHR via API
                 </div>
               </div>
-            </div>
-
-            {/* Code snippet */}
-            <div className="mt-3">
-              <button onClick={() => setShowSnippet(!showSnippet)} className="text-xs font-medium cursor-pointer flex items-center gap-1" style={{ color: '#0d9488' }}>
-                <svg className={`w-3 h-3 transition-transform ${showSnippet ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
-                {showSnippet ? 'Hide' : 'Show'} sample FHIR JSON
-              </button>
-              {showSnippet && (
-                <pre className="bg-slate-900 text-slate-300 text-xs p-4 rounded-xl font-mono overflow-x-auto mt-2">{fhirSnippet}</pre>
-              )}
             </div>
           </div>
 
@@ -230,7 +206,11 @@ function FhirContent({ visible }: { visible: boolean }) {
             <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4">Mapping Configuration UI</h5>
             <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
               <div className="bg-slate-50 border-b border-slate-200 px-5 py-2.5 flex items-center gap-2">
-                <div className="flex gap-1"><span className="w-2.5 h-2.5 rounded-full bg-slate-300" /><span className="w-2.5 h-2.5 rounded-full bg-slate-300" /><span className="w-2.5 h-2.5 rounded-full bg-slate-300" /></div>
+                <div className="flex gap-1">
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                  <span className="w-2.5 h-2.5 rounded-full bg-slate-300" />
+                </div>
                 <span className="text-xs font-semibold text-slate-500 ml-2">FHIR Mapping</span>
               </div>
               <div className="p-4">
@@ -238,7 +218,7 @@ function FhirContent({ visible }: { visible: boolean }) {
                   <thead>
                     <tr>
                       <th className="text-left text-xs font-bold text-slate-400 uppercase tracking-wider pb-2">Form Field</th>
-                      <th className="text-center text-xs pb-2" />
+                      <th className="w-8" />
                       <th className="text-left text-xs font-bold text-slate-400 uppercase tracking-wider pb-2">FHIR Resource</th>
                     </tr>
                   </thead>
@@ -246,7 +226,7 @@ function FhirContent({ visible }: { visible: boolean }) {
                     {mappingRows.map((row, i) => (
                       <tr key={i}>
                         <td className="py-1.5 text-slate-700 font-medium">{row.field}</td>
-                        <td className="py-1.5 text-center" style={{ color: '#2dd4bf' }}>&rarr;</td>
+                        <td className="py-1.5 text-center" style={{ color: '#2dd4bf' }}>→</td>
                         <td className="py-1.5 font-mono text-xs px-2 rounded" style={{ color: '#0f766e', backgroundColor: '#f0fdfa' }}>{row.fhir}</td>
                       </tr>
                     ))}
@@ -259,23 +239,17 @@ function FhirContent({ visible }: { visible: boolean }) {
                 </div>
               </div>
             </div>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {['Auto-suggest appropriate mappings', 'Templates for weight loss, dermatology, etc.', 'Preview FHIR output before saving'].map((f, i) => (
-                <span key={i} className="text-xs px-2.5 py-1 rounded-full border" style={{ backgroundColor: '#f0fdfa', color: '#0f766e', borderColor: '#99f6e4' }}>{f}</span>
-              ))}
-            </div>
           </div>
 
           {/* 5. Integration Flow */}
           <div className="grid md:grid-cols-2 gap-5">
             <div className="bg-white rounded-xl border border-slate-100 shadow-sm p-5">
               <h5 className="text-sm font-bold text-slate-800 mb-3">Integration Flow</h5>
-              <div className="relative pl-6 space-y-0">
-                <div className="absolute left-2 top-2 bottom-2 w-0.5" style={{ backgroundColor: '#99f6e4' }} />
+              <div className="space-y-2">
                 {flowSteps.map((s, i) => (
-                  <div key={i} className="relative flex items-start gap-3 py-1.5">
-                    <div className="absolute -left-6 mt-0.5 w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold text-white z-10" style={{ backgroundColor: ACCENT }}>{i + 1}</div>
-                    <span className="text-sm text-slate-600 pl-1">{s}</span>
+                  <div key={i} className="flex items-center gap-3">
+                    <span className="w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold text-white shrink-0" style={{ backgroundColor: ACCENT }}>{i + 1}</span>
+                    <span className="text-sm text-slate-600">{s}</span>
                   </div>
                 ))}
               </div>
@@ -287,7 +261,7 @@ function FhirContent({ visible }: { visible: boolean }) {
                   <div key={i} className="flex items-center justify-between text-sm rounded-lg p-3 border" style={{ backgroundColor: m.rec ? '#f0fdfa' : '#f8fafc', borderColor: m.rec ? '#99f6e4' : '#e2e8f0' }}>
                     <div>
                       <span className="font-semibold" style={{ color: m.rec ? '#115e59' : '#334155' }}>{m.method}</span>
-                      <span className="text-slate-400 ml-2 text-xs">&mdash; {m.desc}</span>
+                      <span className="text-slate-400 ml-2 text-xs">— {m.desc}</span>
                     </div>
                     {m.rec && <span className="text-xs font-bold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: '#14b8a6' }}>Recommended</span>}
                   </div>
@@ -296,7 +270,7 @@ function FhirContent({ visible }: { visible: boolean }) {
             </div>
           </div>
 
-          {/* 6. Common FHIR Resources Table */}
+          {/* 6. Resources Table */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-x-auto">
             <table className="w-full text-sm">
               <thead>
@@ -318,7 +292,7 @@ function FhirContent({ visible }: { visible: boolean }) {
             </table>
           </div>
 
-          {/* 7. Benefits & ROI */}
+          {/* 7. ROI */}
           <div className="grid md:grid-cols-3 gap-4">
             <div className="bg-white rounded-xl border border-slate-100 shadow-sm p-5 text-center">
               <div className="text-2xl mb-2">⏱️</div>
@@ -336,32 +310,34 @@ function FhirContent({ visible }: { visible: boolean }) {
               <div className="text-2xl mb-2">✅</div>
               <div className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-1">Data Quality</div>
               <div className="text-sm text-slate-500 mb-2">Before: 5-10% entry errors</div>
-              <div className="text-sm font-bold" style={{ color: '#059669' }}>After: {'<'}1% errors</div>
+              <div className="text-sm font-bold" style={{ color: '#059669' }}>{'After: <1% errors'}</div>
             </div>
           </div>
 
           {/* 8. Risks */}
           <div className="grid sm:grid-cols-2 gap-3">
             {risks.map((r, i) => (
-              <div key={i} className="bg-white rounded-xl border border-slate-100 shadow-sm p-4" style={{ borderLeft: `3px solid ${r.level === 'critical' ? '#ef4444' : '#f59e0b'}` }}>
+              <div key={i} className="bg-white rounded-xl border border-slate-100 shadow-sm p-4" style={{ borderLeftWidth: 3, borderLeftStyle: 'solid', borderLeftColor: r.critical ? '#ef4444' : '#f59e0b' }}>
                 <div className="flex items-center gap-2 mb-1">
-                  <span>{r.level === 'critical' ? '🔴' : '🟡'}</span>
+                  <span>{r.critical ? '🔴' : '🟡'}</span>
                   <span className="font-semibold text-sm text-slate-800">{r.title}</span>
                 </div>
                 <p className="text-xs text-slate-500 italic mb-1">Why: {r.why}</p>
-                <p className="text-xs text-slate-600"><span className="font-semibold" style={{ color: '#059669' }}>Mitigation:</span> {r.mit}</p>
+                <p className="text-xs text-slate-600">
+                  <span className="font-semibold" style={{ color: '#059669' }}>Mitigation:</span> {r.mit}
+                </p>
               </div>
             ))}
           </div>
 
-          {/* 9. Updated Timeline */}
+          {/* 9. Timeline */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 overflow-x-auto">
             <div className="flex items-center justify-between mb-4">
               <h5 className="text-sm font-bold text-slate-800">Updated Timeline (FHIR Addition)</h5>
               <div className="flex items-center gap-3 text-xs">
-                <span className="text-slate-400">Original: <span className="font-bold text-slate-600">6 months</span></span>
-                <svg className="w-4 h-4" style={{ color: '#14b8a6' }} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
-                <span className="font-bold" style={{ color: '#0f766e' }}>With FHIR: 7.5 months</span>
+                <span className="text-slate-400">Original: <strong className="text-slate-600">6 months</strong></span>
+                <span style={{ color: '#14b8a6' }}>→</span>
+                <strong style={{ color: '#0f766e' }}>With FHIR: 7.5 months</strong>
               </div>
             </div>
             <div className="space-y-2 min-w-[350px]">
@@ -375,7 +351,10 @@ function FhirContent({ visible }: { visible: boolean }) {
                       <div className="text-xs text-slate-400">{p.weeks}</div>
                     </div>
                     <div className="flex-1 relative h-7 bg-slate-50 rounded-lg">
-                      <div className="absolute top-0.5 bottom-0.5 rounded-md flex items-center justify-center" style={{ left: `${leftPct}%`, width: `${widthPct}%`, backgroundColor: p.color, opacity: 0.85 }}>
+                      <div
+                        className="absolute top-0.5 bottom-0.5 rounded-md flex items-center justify-center"
+                        style={{ left: leftPct + '%', width: widthPct + '%', backgroundColor: p.color, opacity: 0.85 }}
+                      >
                         <span className="text-xs font-bold" style={{ color: 'rgba(255,255,255,0.9)' }}>{p.end - p.start + 1}w</span>
                       </div>
                     </div>
@@ -386,27 +365,28 @@ function FhirContent({ visible }: { visible: boolean }) {
           </div>
 
           {/* 10. Recommendation */}
-          <div className="rounded-2xl overflow-hidden">
-            <div className="p-5 text-white" style={{ background: 'linear-gradient(to right, #0d9488, #14b8a6)' }}>
+          <div className="rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(to right, #0d9488, #14b8a6)' }}>
+            <div className="p-5 text-white">
               <div className="flex items-start gap-3">
                 <span className="text-2xl">✅</span>
                 <div>
                   <h5 className="font-bold text-sm uppercase tracking-wider mb-2">Recommendation: Proceed with FHIR R4</h5>
                   <div className="grid sm:grid-cols-2 gap-4 text-sm" style={{ color: 'rgba(255,255,255,0.9)' }}>
                     <div>
-                      <span className="font-bold text-white">Why:</span>
+                      <strong className="text-white">Why:</strong>
                       <ul className="mt-1 space-y-1">
-                        {['Essential for enterprise clients', 'Strong ROI ($7,500/yr per client)', 'Competitive advantage', 'Regulatory compliance requirement'].map((w, i) => (
-                          <li key={i} className="flex items-start gap-1.5"><span className="mt-1 w-1 h-1 rounded-full shrink-0" style={{ backgroundColor: 'rgba(255,255,255,0.6)' }} />{w}</li>
-                        ))}
+                        <li className="flex items-start gap-1.5"><span className="mt-1 w-1 h-1 rounded-full shrink-0 bg-white/60" />Essential for enterprise clients</li>
+                        <li className="flex items-start gap-1.5"><span className="mt-1 w-1 h-1 rounded-full shrink-0 bg-white/60" />Strong ROI ($7,500/yr per client)</li>
+                        <li className="flex items-start gap-1.5"><span className="mt-1 w-1 h-1 rounded-full shrink-0 bg-white/60" />Competitive advantage</li>
+                        <li className="flex items-start gap-1.5"><span className="mt-1 w-1 h-1 rounded-full shrink-0 bg-white/60" />Regulatory compliance requirement</li>
                       </ul>
                     </div>
                     <div>
-                      <span className="font-bold text-white">Trade-off:</span>
+                      <strong className="text-white">Trade-off:</strong>
                       <p className="mt-1">+1.5 months timeline, but delivers significantly more value.</p>
-                      <div className="mt-3 rounded-lg p-3" style={{ backgroundColor: 'rgba(255,255,255,0.1)' }}>
-                        <span className="text-xs font-bold uppercase tracking-wider" style={{ color: 'rgba(255,255,255,0.7)' }}>Alternative:</span>
-                        <p className="text-xs mt-1" style={{ color: 'rgba(255,255,255,0.8)' }}>Launch without FHIR first (6 months), add later (Phase 2). Risk: May lose enterprise deals.</p>
+                      <div className="mt-3 rounded-lg p-3 bg-white/10">
+                        <span className="text-xs font-bold uppercase tracking-wider text-white/70">Alternative:</span>
+                        <p className="text-xs mt-1 text-white/80">Launch without FHIR first (6 months), add later (Phase 2). Risk: May lose enterprise deals.</p>
                       </div>
                     </div>
                   </div>
@@ -418,13 +398,5 @@ function FhirContent({ visible }: { visible: boolean }) {
         </div>
       )}
     </div>
-  );
-}
-
-export default function FhirIntegration({ visible }: { visible: boolean }) {
-  return (
-    <FhirErrorBoundary>
-      <FhirContent visible={visible} />
-    </FhirErrorBoundary>
   );
 }
