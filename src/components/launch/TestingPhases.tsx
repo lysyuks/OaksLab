@@ -14,9 +14,9 @@ interface Phase {
 const phases: Phase[] = [
   {
     name: 'Developer Testing',
-    weeks: 'Wk 6–24 (Ongoing)',
-    startWeek: 6,
-    endWeek: 24,
+    weeks: 'Wk 5–23 (Ongoing)',
+    startWeek: 5,
+    endWeek: 23,
     color: '#059669',
     items: [
       { title: 'Continuous', details: ['Unit tests alongside code', 'Code review includes test review', 'Local feature testing', 'CI/CD runs tests automatically'] },
@@ -24,9 +24,9 @@ const phases: Phase[] = [
   },
   {
     name: 'QA — Functional',
-    weeks: 'Weeks 25–26',
-    startWeek: 25,
-    endWeek: 26,
+    weeks: 'Weeks 24–25',
+    startWeek: 24,
+    endWeek: 25,
     color: '#f59e0b',
     items: [
       { title: 'Functional Testing', details: ['Test all acceptance criteria', 'Cross-browser: Chrome, Firefox, Safari, Edge', 'Mobile: iOS Safari, Android Chrome', 'Accessibility: WCAG 2.1 AA'] },
@@ -34,9 +34,9 @@ const phases: Phase[] = [
   },
   {
     name: 'QA — Integration & Perf',
-    weeks: 'Week 26',
-    startWeek: 26,
-    endWeek: 26,
+    weeks: 'Week 25',
+    startWeek: 25,
+    endWeek: 25,
     color: '#d97706',
     items: [
       { title: 'Integration & Performance', details: ['All API integrations end-to-end', 'Load testing: 1000 concurrent users', 'Builder load: <2s · Form render: <1s · Auto-save: <500ms · Submit: <3s', 'Database stress testing'] },
@@ -44,9 +44,9 @@ const phases: Phase[] = [
   },
   {
     name: 'Security & Compliance',
-    weeks: 'Week 27',
-    startWeek: 27,
-    endWeek: 27,
+    weeks: 'Week 26',
+    startWeek: 26,
+    endWeek: 26,
     color: '#ef4444',
     items: [
       { title: 'Security Audit', details: ['Penetration testing by security firm', 'HIPAA compliance audit', 'Vulnerability scanning', 'Encryption, access control, and audit log verification'] },
@@ -54,9 +54,9 @@ const phases: Phase[] = [
   },
   {
     name: 'UAT',
-    weeks: 'Week 28',
-    startWeek: 28,
-    endWeek: 28,
+    weeks: 'Week 27',
+    startWeek: 27,
+    endWeek: 27,
     color: '#7c3aed',
     items: [
       { title: 'User Acceptance', details: ['Pilot client testing', 'Real-world scenarios', 'Bug triage & fixes', 'Sign-off & Go/No-Go decision'] },
@@ -64,8 +64,8 @@ const phases: Phase[] = [
   },
 ];
 
-const TOTAL = 30;
-const START = 6;
+const TOTAL = 29;
+const START = 5;
 
 export default function TestingPhases({ visible }: { visible: boolean }) {
   const [expanded, setExpanded] = useState(true);

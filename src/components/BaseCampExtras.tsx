@@ -4,7 +4,7 @@ const ACCENT = '#0d9488';
 
 const days = [
   {
-    day: 'Wk 1',
+    day: 1,
     title: 'Foundation & Alignment',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -18,7 +18,7 @@ const days = [
     ],
   },
   {
-    day: 'Wk 1–2',
+    day: 2,
     title: 'Discovery & Deep Dive',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -32,7 +32,7 @@ const days = [
     ],
   },
   {
-    day: 'Wk 2',
+    day: 3,
     title: 'Planning & Risk Assessment',
     icon: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -105,7 +105,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
 
   return (
     <div className="mt-12 space-y-12">
-      {/* ─── 2-Week Kickoff Structure ─── */}
+      {/* ─── 3-Day Kickoff Structure ─── */}
       <div
         className={`transition-all duration-700 delay-400 ${
           visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
@@ -120,7 +120,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
-          <h4 className="text-lg font-bold text-slate-800">2-Week Kickoff Structure</h4>
+          <h4 className="text-lg font-bold text-slate-800">3-Day Kickoff Structure</h4>
         </div>
 
         <div className="grid md:grid-cols-3 gap-5">
@@ -148,7 +148,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                     }}
                   >
                     <span style={{ color: ACCENT }}>{d.icon}</span>
-                    {d.day}
+                    Day {d.day}
                   </span>
                 </div>
 
@@ -170,7 +170,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
         {/* Connecting arrows between cards (desktop) */}
         <div className="hidden md:flex justify-center items-center gap-2 mt-4 text-slate-300">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
-          <span className="text-xs text-slate-400 font-medium">2 weeks to full alignment</span>
+          <span className="text-xs text-slate-400 font-medium">3 days to full alignment</span>
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-slate-200 to-transparent" />
         </div>
       </div>

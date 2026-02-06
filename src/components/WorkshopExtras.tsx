@@ -11,8 +11,8 @@ import SpecPhilosophy from './workshop/SpecPhilosophy';
 const ACCENT = '#f59e0b';
 
 const sprints = [
-  { id: '1\u20134', weeks: 'Weeks 9\u201316', title: 'Funnel Builder Engine + Clinical Protocol Validator', color: '#f59e0b', items: ['No-code builder with branching logic editor', 'Protocol engine: clinical rules \u2192 configuration', 'Auto-scoring for validated instruments (PHQ-9, GAD-7)', 'Compliance validator for funnel checks'] },
-  { id: '5\u20138', weeks: 'Weeks 17\u201324', title: 'Client Portal + Integration Layer', color: '#2563eb', items: ['Client dashboard & template library', 'EHR integration (Healthie, scheduling)', 'Payment stack integration', 'Patient-facing funnel renderer'] },
+  { id: '1\u20134', weeks: 'Weeks 7\u201314', title: 'Funnel Builder Engine + Clinical Protocol Validator', color: '#f59e0b', items: ['No-code builder with branching logic editor', 'Protocol engine: clinical rules \u2192 configuration', 'Auto-scoring for validated instruments (PHQ-9, GAD-7)', 'Compliance validator for funnel checks'] },
+  { id: '5\u20138', weeks: 'Weeks 15\u201323', title: 'Client Portal + Integration Layer', color: '#2563eb', items: ['Client dashboard & template library', 'EHR integration (Healthie, scheduling)', 'Payment stack integration', 'Patient-facing funnel renderer'] },
 ];
 
 export default function WorkshopExtras({ visible }: { visible: boolean }) {
@@ -30,7 +30,7 @@ export default function WorkshopExtras({ visible }: { visible: boolean }) {
           </div>
           <div>
             <h4 className="text-lg font-bold text-slate-800">Development Phases Overview</h4>
-            <span className="text-xs text-slate-400">Weeks 6–24 · 2-week sprints with daily standups, biweekly reviews</span>
+            <span className="text-xs text-slate-400">Weeks 5–23 · 2-week sprints with daily standups, biweekly reviews</span>
           </div>
           <svg className={`w-5 h-5 text-slate-400 transition-transform duration-300 ${showSprints ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -47,7 +47,7 @@ export default function WorkshopExtras({ visible }: { visible: boolean }) {
                   <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: ACCENT }} />
                   <span className="font-bold text-sm text-slate-800">Specifications Phase</span>
                 </div>
-                <span className="text-xs text-slate-400 ml-5">Weeks 6–8</span>
+                <span className="text-xs text-slate-400 ml-5">Weeks 5–6</span>
               </div>
               <ul className="p-5 space-y-2">
                 {['User story documentation with acceptance criteria', 'Wireframes and mockups for all features', 'API contract definitions', 'Technical handoff to engineering team'].map((item, i) => (
@@ -66,7 +66,7 @@ export default function WorkshopExtras({ visible }: { visible: boolean }) {
                   <span className="w-2.5 h-2.5 rounded-full" style={{ backgroundColor: '#2563eb' }} />
                   <span className="font-bold text-sm text-slate-800">Development Phase</span>
                 </div>
-                <span className="text-xs text-slate-400 ml-5">Weeks 9–24 · 8 sprints</span>
+                <span className="text-xs text-slate-400 ml-5">Weeks 7–23 · 8 sprints</span>
               </div>
               <ul className="p-5 space-y-2">
                 {['Sprint 1\u20134: Funnel Builder Engine + Protocol Validator', 'Sprint 5\u20138: Client Portal + Integration Layer', 'Continuous integration & automated testing', 'Biweekly sprint reviews with stakeholders'].map((item, i) => (

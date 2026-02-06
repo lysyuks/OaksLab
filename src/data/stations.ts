@@ -19,7 +19,7 @@ export const stations: StationData[] = [
     emoji: '⛺',
     title: 'Kickoff',
     subtitle: 'Stakeholder Alignment',
-    timeline: 'Weeks 1–2',
+    timeline: 'Days 1–3',
     description:
       'Align all stakeholders on the vision, define success metrics, and establish the team structure. This is where we set the foundation for the entire project.',
     deliverables: [
@@ -42,7 +42,7 @@ export const stations: StationData[] = [
     emoji: '📐',
     title: 'Scope & Schedule',
     subtitle: 'Project Planning',
-    timeline: 'Weeks 3–5',
+    timeline: 'Weeks 1–3',
     description:
       'Define the full project scope, system architecture, and technical decisions. Translate the vision into concrete engineering plans.',
     deliverables: [
@@ -66,7 +66,7 @@ export const stations: StationData[] = [
     emoji: '🎯',
     title: 'Discovery',
     subtitle: 'Protocol & Team Collaboration',
-    timeline: 'Weeks 3–5',
+    timeline: 'Weeks 2–4',
     description:
       'Deep-dive into existing clinical protocols and map every eligibility rule, screening instrument, and treatment pathway into structured, machine-readable configuration.',
     deliverables: [
@@ -90,7 +90,7 @@ export const stations: StationData[] = [
     emoji: '🔧',
     title: 'Development',
     subtitle: 'Specifications & Build',
-    timeline: 'Weeks 6–24',
+    timeline: 'Weeks 5–23',
     description:
       'Define detailed specifications, hand off to engineering, and build the complete platform. This phase includes requirements documentation, development sprints, and integration work.',
     deliverables: [
@@ -101,8 +101,8 @@ export const stations: StationData[] = [
       'EHR/scheduling/payment integrations',
     ],
     details: [
-      'Specifications phase (Weeks 6–8): User stories, wireframes, API contracts, technical handoff',
-      'Development sprints (Weeks 9–24): 2-week sprints with daily standups, biweekly reviews',
+      'Specifications phase (Weeks 5–6): User stories, wireframes, API contracts, technical handoff',
+      'Development sprints (Weeks 7–23): 2-week sprints with daily standups, biweekly reviews',
       'Sprints 1–4: Funnel Builder Engine + Clinical Protocol Validator',
       'Sprints 5–8: Client Portal + Integration Layer',
       'Sprints 9–12: Patient Forms + Analytics',
@@ -116,7 +116,7 @@ export const stations: StationData[] = [
     emoji: '🚀',
     title: 'Testing & Rollout',
     subtitle: 'Launch Strategy',
-    timeline: 'Weeks 25–30',
+    timeline: 'Weeks 24–29',
     description:
       'Rigorous testing of all clinical paths, compliance validation, performance optimization, and phased rollout to pilot clients.',
     deliverables: [
@@ -126,10 +126,10 @@ export const stations: StationData[] = [
       'Pilot client launch (3 funnels)',
     ],
     details: [
-      'QA testing and functional validation (Weeks 25–26)',
-      'Security audit and HIPAA compliance (Week 27)',
-      'UAT with pilot clients (Week 28)',
-      'Soft launch and phased rollout (Weeks 29–30+)',
+      'QA testing and functional validation (Weeks 24–25)',
+      'Security audit and HIPAA compliance (Week 26)',
+      'UAT with pilot clients (Week 27)',
+      'Soft launch and phased rollout (Weeks 28–29+)',
     ],
     gradient: 'from-rose-500 to-red-500',
     accentColor: '#ef4444',
@@ -140,7 +140,7 @@ export const stations: StationData[] = [
     emoji: '📋',
     title: 'FHIR R4 Integration',
     subtitle: 'Interoperability & EHR Data Exchange',
-    timeline: 'Weeks 18–26',
+    timeline: 'Weeks 18–25',
     description:
       'Enabling seamless data exchange with EHR systems through healthcare standards. Automatically send intake form data to doctors\' EHR systems (Epic, Cerner, Athena) in standardized FHIR format.',
     deliverables: [
