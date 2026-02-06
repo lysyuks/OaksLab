@@ -2,6 +2,7 @@ import TestingStrategy from './launch/TestingStrategy';
 import TestingPhases from './launch/TestingPhases';
 import UATSection from './launch/UATSection';
 import GTMRollout from './launch/GTMRollout';
+import FhirIntegration from './launch/FhirIntegration';
 
 export default function LaunchPadExtras({ visible }: { visible: boolean }) {
   return (
@@ -10,6 +11,7 @@ export default function LaunchPadExtras({ visible }: { visible: boolean }) {
       <TestingPhases visible={visible} />
       <UATSection visible={visible} />
       <GTMRollout visible={visible} />
+      <FhirIntegration visible={visible} />
     </div>
   );
 }
