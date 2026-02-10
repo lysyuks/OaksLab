@@ -37,7 +37,7 @@ const rolloutPhases = [
     color: '#059669',
     clients: [],
     activities: ['Official launch announcement + blog post', 'Product demo video (5 min)', 'Case studies from pilot clients', 'Complete knowledge base (20+ articles)', 'Template library (15+ pre-built forms)', 'Weekly live onboarding webinars'],
-    metrics: ['60%+ adoption in 90 days', 'Config time: <2 days (vs 2 months)', 'Integration success: 98%+', 'Patient completion: >85%', 'NPS score: 50+', 'Formsort usage declining 20%+/month'],
+    metrics: ['60%+ adoption in 90 days', 'Config time: <2 days (vs 4–6 weeks)', 'Integration success: 98%+', 'Patient completion: >85%', 'NPS score: 50+', 'Typeform/Jotform usage declining 20%+/month'],
     support: 'Tiered: Enterprise (<2h) · Pro (<8h) · Standard (email + KB)',
   },
 ];
@@ -52,7 +52,7 @@ const rollbackTriggers = [
 const rollbackSteps = [
   { step: 1, text: 'Pause new client onboarding immediately', time: '0h' },
   { step: 2, text: 'Notify affected clients within 1 hour', time: '1h' },
-  { step: 3, text: 'Revert to Formsort/Embeddables for new forms', time: '2h' },
+  { step: 3, text: 'Revert to Typeform/Jotform for new forms', time: '2h' },
   { step: 4, text: 'Keep existing forms running if stable', time: '2h' },
   { step: 5, text: 'Root cause analysis', time: '24h' },
   { step: 6, text: 'Fix plan documented', time: '48h' },
@@ -97,7 +97,7 @@ export default function GTMRollout({ visible }: { visible: boolean }) {
             <span className="text-2xl">🎯</span>
             <div>
               <h5 className="font-bold text-sm uppercase tracking-wider mb-1">Rollout Philosophy</h5>
-              <p className="text-sm text-white/90">"Start small, learn fast, scale gradually" — Minimize risk with pilots, run Formsort/Embeddables in parallel for 30 days, white-glove support during transition.</p>
+              <p className="text-sm text-white/90">"Start small, learn fast, scale gradually" — Minimize risk with pilots, run Typeform/Jotform in parallel for 30 days, white-glove support during transition.</p>
             </div>
           </div>
         </div>

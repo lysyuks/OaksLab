@@ -27,7 +27,7 @@ const risks: Risk[] = [
     severity: 'high',
     why: 'Unknown formats, zero downtime needed',
     mitigations: [
-      'Early Formsort/Embeddables export access',
+      'Early Typeform/Jotform data export access',
       'Dry-run migration scripts',
       '30-day parallel run',
       'Manual QA on every migrated form',

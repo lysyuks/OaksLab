@@ -50,11 +50,11 @@ export default function ProjectContext() {
               <h3 className="text-lg font-bold text-red-300">Current State</h3>
             </div>
             <p className="text-sm text-slate-300 mb-4">
-              Using Formsort / Embeddables as third-party intake form builders.
+              Using Typeform / Jotform as third-party intake form builders.
             </p>
             <ul className="space-y-2.5">
               {[
-                '2-month setup time per client',
+                '4–6 week setup time per client',
                 'Clients must learn clinical protocols',
                 'Complex integration & testing cycles',
                 'No end-to-end platform ownership',
@@ -89,8 +89,8 @@ export default function ProjectContext() {
             </p>
             <div className="bg-white/5 rounded-xl p-4 border border-white/10">
               <p className="text-sm text-slate-200 italic leading-relaxed">
-                "This is the last piece missing in our end-to-end flow. Configuration always took 2 months on
-                Embeddables/FormSort because every client needed to learn the Clinical Protocol and the
+                "This is the last piece missing in our end-to-end flow. Configuration always took 4–6 weeks on
+                Typeform/Jotform because every client needed to learn the Clinical Protocol and the
                 integration/testing always took a lot of effort."
               </p>
             </div>
@@ -139,7 +139,7 @@ export default function ProjectContext() {
           }`}
         >
           <div className="flex items-center gap-6 bg-white/5 rounded-full px-8 py-3 border border-white/10">
-            <span className="text-red-400 font-semibold text-sm">2 Months</span>
+            <span className="text-red-400 font-semibold text-sm">4–6 Weeks</span>
             <svg className="w-6 h-6 text-teal-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
             </svg>

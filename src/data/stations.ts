@@ -30,7 +30,7 @@ export const stations: StationData[] = [
     ],
     details: [
       'Define the "why" — why MediCare Solutions needs to own this piece of the stack',
-      'Map current pain points with Formsort/Embeddables in detail',
+      'Document current limitations and pain points with Typeform/Jotform',
       'Agree on MVP scope vs. future phases',
     ],
     gradient: 'from-teal-500 to-teal-600',

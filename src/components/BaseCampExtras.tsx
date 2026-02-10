@@ -290,18 +290,18 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                 <thead>
                   <tr className="border-b border-slate-100">
                     <th className="text-left px-4 py-3 font-semibold text-slate-600">Issue</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Formsort</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Embeddables</th>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Typeform</th>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Jotform</th>
                     <th className="text-left px-4 py-3 font-semibold text-slate-600">Business Impact</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ['Setup Time', '2 months', '2 months', 'Slow client onboarding'],
+                    ['Setup Time', '4–6 weeks', '3–4 weeks', 'Slow client onboarding'],
                     ['Integration', 'Not native', 'Not native', 'Data silos, manual work'],
                     ['Clinical Protocol', 'Manual', 'Manual', 'Risk of non-compliance'],
-                    ['Who Configures', 'MediCare team', 'MediCare team', 'Heavy support burden'],
-                    ['Maintenance', 'Ongoing effort', 'Difficult', 'Technical debt'],
+                    ['Who Configures', 'Requires technical setup', 'Learning curve for admins', 'Heavy support burden'],
+                    ['Maintenance', 'Ongoing subscription costs', 'Template-based, limited flexibility', 'Technical debt'],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
                       <td className="px-4 py-2.5 font-medium text-slate-700">{row[0]}</td>
@@ -324,7 +324,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
             <div className="px-6 py-4 border-t border-slate-100" style={{ backgroundColor: '#fef2f2' }}>
               <p className="text-sm font-medium text-slate-700">
                 <span style={{ color: '#dc2626' }} className="font-bold">Core Problem: </span>
-                These tools prevent MediCare Solutions from delivering a seamless end-to-end patient experience. Intake forms are the missing piece.
+                Current form builders like Typeform and Jotform lack healthcare-specific features and seamless platform integration. Intake forms are the missing piece.
               </p>
             </div>
           </div>
@@ -341,17 +341,17 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                 <thead>
                   <tr className="border-b border-slate-100">
                     <th className="text-left px-4 py-3 font-semibold text-slate-600">What Changes</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Before (Formsort/Embeddables)</th>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Before (Typeform/Jotform)</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (MediCare Builder)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    ['Setup Time', '2 months', '2 days'],
-                    ['Who Builds Forms', 'MediCare team', 'Client self-service'],
-                    ['Protocol Validation', 'Manual', 'Automatic built-in'],
-                    ['Integration', 'Custom API work', 'Native to platform'],
-                    ['Platform Completeness', 'Missing piece', 'End-to-end'],
+                    ['Setup Time', '4–6 weeks', '2 days'],
+                    ['Who Builds Forms', 'External tools/admins', 'Client self-service'],
+                    ['Protocol Validation', 'Manual compliance checking', 'Automatic built-in'],
+                    ['Integration', 'API workarounds required', 'Native to platform'],
+                    ['Platform Completeness', 'Disconnected tools', 'End-to-end'],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
                       <td className="px-4 py-2.5 font-medium text-slate-700">{row[0]}</td>
@@ -367,7 +367,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
             <div className="px-6 py-4 border-t border-slate-100" style={{ backgroundColor: '#f0fdf4' }}>
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
-                  '30x faster client onboarding (2 months \u2192 2 days)',
+                  '15x faster client onboarding (4\u20136 weeks \u2192 2 days)',
                   'Self-service = less MediCare Solutions team burden',
                   'Built-in MWL Clinical Protocol validator',
                   'Seamless integration with scheduling, labs, meds, fulfillment',
@@ -397,7 +397,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                   color: '#f59e0b',
                   items: [
                     'New builder launches',
-                    'Formsort/Embeddables stay active',
+                    'Typeform/Jotform stay active as fallback',
                     'Pilot with 2\u20133 clients',
                   ],
                 },
@@ -407,7 +407,8 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                   color: ACCENT,
                   items: [
                     'Migrate 5\u201310 clients/month',
-                    'Both systems available',
+                    'Both systems available during transition',
+                    'Provide migration assistance',
                   ],
                 },
                 {
@@ -416,7 +417,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                   color: '#16a34a',
                   items: [
                     'All clients on new builder',
-                    'Sunset Formsort/Embeddables',
+                    'Sunset Typeform/Jotform subscriptions',
                   ],
                 },
               ].map((p) => (
@@ -442,7 +443,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
             </div>
             <div className="px-6 py-3 border-t border-slate-100 bg-slate-50">
               <p className="text-xs text-slate-500">
-                <span className="font-semibold">Safety:</span> Keep old tools for 90 days as backup
+                <span className="font-semibold">Safety:</span> Keep Typeform/Jotform access for 90 days as backup during transition
               </p>
             </div>
           </div>
@@ -466,7 +467,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                 </thead>
                 <tbody>
                   {[
-                    ['Setup Time', '8 weeks', '2 days', '28x faster'],
+                    ['Setup Time', '4\u20136 weeks', '2 days', '15x faster'],
                     ['Team Hours/Client', '40\u201360 hrs', '2 hrs', '95% less'],
                     ['Integration Success', '85%', '99%', '+14%'],
                     ['Cost/Client', '$5,000', '$200', '96% savings'],
