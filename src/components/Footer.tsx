@@ -1,8 +1,8 @@
 export default function Footer() {
   return (
     <footer>
-      <div className="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div className="max-w-6xl mx-auto px-6 text-center">
+      <div className="bg-slate-900 text-slate-400 py-8 sm:py-12 border-t border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 text-center">
           <div className="text-2xl font-bold text-white mb-2">
             Weight Loss Clinic
           </div>

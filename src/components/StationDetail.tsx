@@ -34,18 +34,18 @@ export default function StationDetail({ station, isEven }: Props) {
     <section
       id={station.id}
       ref={ref}
-      className={`py-16 md:py-24 ${isEven ? 'bg-white' : 'bg-slate-50/70'}`}
+      className={`py-12 sm:py-16 md:py-24 ${isEven ? 'bg-white' : 'bg-slate-50/70'}`}
     >
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
           className={`transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
           }`}
         >
           {/* Station header */}
-          <div className="flex items-center gap-4 mb-8">
+          <div className="flex items-center gap-3 sm:gap-4 mb-6 sm:mb-8">
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl shadow-md"
+              className="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center text-xl sm:text-2xl shadow-md"
               style={{
                 background: `linear-gradient(135deg, ${station.accentColor}15, ${station.accentColor}30)`,
                 border: `2px solid ${station.accentColor}40`,
@@ -60,9 +60,9 @@ export default function StationDetail({ station, isEven }: Props) {
               >
                 Station {station.number} · {station.timeline}
               </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-800">
+              <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800">
                 {station.title}
-                <span className="text-slate-400 font-normal ml-3 text-lg">
+                <span className="text-slate-400 font-normal ml-2 sm:ml-3 text-sm sm:text-lg block sm:inline mt-1 sm:mt-0">
                   {station.subtitle}
                 </span>
               </h3>
@@ -70,15 +70,15 @@ export default function StationDetail({ station, isEven }: Props) {
           </div>
 
           {/* Description */}
-          <p className="text-lg text-slate-600 max-w-3xl mb-10 leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 max-w-3xl mb-6 sm:mb-10 leading-relaxed">
             {station.description}
           </p>
 
           {/* Two-column content */}
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
             {/* Deliverables */}
             <div
-              className={`bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all duration-700 delay-200 ${
+              className={`bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-100 transition-all duration-700 delay-200 ${
                 visible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-6'
               }`}
             >
@@ -122,7 +122,7 @@ export default function StationDetail({ station, isEven }: Props) {
 
             {/* Key Activities */}
             <div
-              className={`bg-white rounded-2xl p-6 shadow-sm border border-slate-100 transition-all duration-700 delay-300 ${
+              className={`bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-100 transition-all duration-700 delay-300 ${
                 visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-6'
               }`}
             >

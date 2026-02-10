@@ -32,12 +32,12 @@ export default function JourneyPath() {
   };
 
   return (
-    <section id="journey" className="py-16 md:py-24 bg-white" ref={pathRef}>
-      <div className="max-w-6xl mx-auto px-6">
-        <h2 className="text-center text-3xl md:text-4xl font-bold text-slate-800 mb-4">
+    <section id="journey" className="py-12 sm:py-16 md:py-24 bg-white" ref={pathRef}>
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800 mb-4">
           The Journey
         </h2>
-        <p className="text-center text-slate-500 mb-16 max-w-xl mx-auto">
+        <p className="text-center text-slate-500 mb-10 sm:mb-16 max-w-xl mx-auto text-sm sm:text-base">
           A comprehensive 29-week initiative structured into 5 strategic phases. Explore each phase to understand the complete transformation journey.
         </p>
 

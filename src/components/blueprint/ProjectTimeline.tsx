@@ -143,13 +143,13 @@ export default function ProjectTimeline({ visible }: { visible: boolean }) {
                   onMouseLeave={() => setHoveredPhase(null)}
                 >
                   {/* Phase label */}
-                  <div className="w-32 shrink-0 text-right pr-2">
-                    <div className="text-xs font-semibold text-slate-700 truncate">{phase.name}</div>
+                  <div className="w-24 sm:w-32 shrink-0 text-right pr-1 sm:pr-2">
+                    <div className="text-[11px] sm:text-xs font-semibold text-slate-700 truncate">{phase.name}</div>
                     <div className="text-[10px] text-slate-400">{phase.weeks}</div>
                   </div>
 
                   {/* Bar track */}
-                  <div className="flex-1 relative h-8 bg-slate-50 rounded-lg min-w-[200px]">
+                  <div className="flex-1 relative h-8 bg-slate-50 rounded-lg">
                     {/* Bar */}
                     <div
                       className={`absolute top-0.5 bottom-0.5 rounded-md transition-all duration-300 flex items-center justify-center ${

@@ -33,10 +33,10 @@ export default function Header() {
       <div className="absolute top-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg, transparent, ${BRAND}40, transparent)` }} />
       <div className="absolute bottom-0 left-0 right-0 h-px" style={{ background: `linear-gradient(90deg, transparent, ${BRAND}30, transparent)` }} />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-24 md:py-32 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-16 sm:py-24 md:py-32 text-center">
         {/* Badge */}
         <div
-          className={`inline-flex items-center gap-2 px-5 py-2 rounded-full text-sm font-semibold mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          className={`inline-flex items-center gap-2 px-4 sm:px-5 py-2 rounded-full text-xs sm:text-sm font-semibold mb-6 sm:mb-10 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           style={{ backgroundColor: `${BRAND}18`, border: `1px solid ${BRAND}40`, color: '#ff6b8a' }}
         >
           <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: BRAND }} />
@@ -45,7 +45,7 @@ export default function Header() {
 
         {/* Title */}
         <h1
-          className={`text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           <span className="text-white">Weight Loss Clinic</span>
           <br />
@@ -59,7 +59,7 @@ export default function Header() {
 
         {/* Subtitle */}
         <p
-          className={`mt-6 text-xl md:text-2xl font-light max-w-2xl mx-auto transition-all duration-700 delay-400 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`mt-4 sm:mt-6 text-base sm:text-xl md:text-2xl font-light max-w-2xl mx-auto transition-all duration-700 delay-400 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           style={{ color: 'rgba(255,255,255,0.55)' }}
         >
           Strategic Product Roadmap — From Vision to Launch
@@ -74,13 +74,13 @@ export default function Header() {
         </p>
 
         {/* Divider */}
-        <div className={`mt-10 mb-10 flex justify-center transition-all duration-700 delay-500 ${visible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}>
+        <div className={`mt-6 sm:mt-10 mb-6 sm:mb-10 flex justify-center transition-all duration-700 delay-500 ${visible ? 'opacity-100 scale-x-100' : 'opacity-0 scale-x-0'}`}>
           <div className="h-px w-32" style={{ background: `linear-gradient(90deg, transparent, ${BRAND}, transparent)` }} />
         </div>
 
         {/* Stats row */}
         <div
-          className={`flex flex-wrap justify-center gap-6 md:gap-12 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          className={`flex flex-wrap justify-center gap-3 sm:gap-6 md:gap-12 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {[
             { value: '29', label: 'Week Timeline', icon: '📅' },
@@ -89,7 +89,7 @@ export default function Header() {
           ].map((stat) => (
             <div
               key={stat.label}
-              className="text-center px-6 py-4 rounded-2xl"
+              className="text-center px-4 sm:px-6 py-3 sm:py-4 rounded-2xl"
               style={{ backgroundColor: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}
             >
               <div className="text-lg mb-1">{stat.icon}</div>
@@ -103,7 +103,7 @@ export default function Header() {
 
         {/* Scroll indicator */}
         <div
-          className={`mt-16 transition-all duration-700 delay-700 ${visible ? 'opacity-100' : 'opacity-0'}`}
+          className={`mt-10 sm:mt-16 transition-all duration-700 delay-700 ${visible ? 'opacity-100' : 'opacity-0'}`}
         >
           <button
             onClick={() =>

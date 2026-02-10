@@ -104,7 +104,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
   };
 
   return (
-    <div className="mt-12 space-y-12">
+    <div className="mt-8 sm:mt-12 space-y-8 sm:space-y-12">
       {/* ─── 3-Day Kickoff Structure ─── */}
       <div
         className={`transition-all duration-700 delay-400 ${
@@ -123,7 +123,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
           <h4 className="text-lg font-bold text-slate-800">3-Day Kickoff Structure</h4>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-5">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-5">
           {days.map((d, i) => (
             <div
               key={d.day}
@@ -280,8 +280,8 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
         <div className="space-y-8 mt-6">
           {/* 1. The Problem */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-100" style={{ backgroundColor: '#fef2f2' }}>
-              <h5 className="font-bold text-slate-800 flex items-center gap-2">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100" style={{ backgroundColor: '#fef2f2' }}>
+              <h5 className="font-bold text-slate-800 flex items-center gap-2 text-sm sm:text-base">
                 <span style={{ color: '#dc2626' }}>1.</span> The Problem with Current Tools
               </h5>
             </div>
@@ -289,10 +289,10 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-slate-100">
-                    <th className="text-left px-4 py-3 font-semibold text-slate-600">Issue</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Typeform</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Jotform</th>
-                    <th className="text-left px-4 py-3 font-semibold text-slate-600">Business Impact</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-slate-600 text-xs sm:text-sm">Issue</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm" style={{ color: '#dc2626' }}>Typeform</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm" style={{ color: '#dc2626' }}>Jotform</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-slate-600 text-xs sm:text-sm hidden sm:table-cell">Impact</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -304,25 +304,25 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                     ['Maintenance', 'Ongoing subscription costs', 'Template-based, limited flexibility', 'Technical debt'],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
-                      <td className="px-4 py-2.5 font-medium text-slate-700">{row[0]}</td>
-                      <td className="px-4 py-2.5" style={{ color: '#dc2626' }}>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 font-medium text-slate-700 text-xs sm:text-sm">{row[0]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm" style={{ color: '#dc2626' }}>
                         <span className="inline-flex items-center gap-1">
                           <span>&#x2718;</span> {row[1]}
                         </span>
                       </td>
-                      <td className="px-4 py-2.5" style={{ color: '#dc2626' }}>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm" style={{ color: '#dc2626' }}>
                         <span className="inline-flex items-center gap-1">
                           <span>&#x2718;</span> {row[2]}
                         </span>
                       </td>
-                      <td className="px-4 py-2.5 text-slate-600">{row[3]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 text-slate-600 text-xs sm:text-sm hidden sm:table-cell">{row[3]}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="px-6 py-4 border-t border-slate-100" style={{ backgroundColor: '#fef2f2' }}>
-              <p className="text-sm font-medium text-slate-700">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-slate-100" style={{ backgroundColor: '#fef2f2' }}>
+              <p className="text-xs sm:text-sm font-medium text-slate-700">
                 <span style={{ color: '#dc2626' }} className="font-bold">Core Problem: </span>
                 Current form builders like Typeform and Jotform lack healthcare-specific features and seamless platform integration. Intake forms are the missing piece.
               </p>
@@ -331,8 +331,8 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
 
           {/* 2. In-House Advantages */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-100" style={{ backgroundColor: '#f0fdf4' }}>
-              <h5 className="font-bold text-slate-800 flex items-center gap-2">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100" style={{ backgroundColor: '#f0fdf4' }}>
+              <h5 className="font-bold text-slate-800 flex items-center gap-2 text-sm sm:text-base">
                 <span style={{ color: ACCENT }}>2.</span> In-House Solution Advantages
               </h5>
             </div>
@@ -340,9 +340,9 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-slate-100">
-                    <th className="text-left px-4 py-3 font-semibold text-slate-600">What Changes</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Before (Typeform/Jotform)</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (WLC Builder)</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-slate-600 text-xs sm:text-sm">What Changes</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm" style={{ color: '#dc2626' }}>Before</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm" style={{ color: ACCENT }}>After</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -354,9 +354,9 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                     ['Platform Completeness', 'Disconnected tools', 'End-to-end'],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
-                      <td className="px-4 py-2.5 font-medium text-slate-700">{row[0]}</td>
-                      <td className="px-4 py-2.5" style={{ color: '#dc2626' }}>{row[1]}</td>
-                      <td className="px-4 py-2.5 font-medium" style={{ color: ACCENT }}>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 font-medium text-slate-700 text-xs sm:text-sm">{row[0]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm" style={{ color: '#dc2626' }}>{row[1]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 font-medium text-xs sm:text-sm" style={{ color: ACCENT }}>
                         {row[2]} {i === 4 && <span>&#x2713;</span>}
                       </td>
                     </tr>
@@ -364,7 +364,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                 </tbody>
               </table>
             </div>
-            <div className="px-6 py-4 border-t border-slate-100" style={{ backgroundColor: '#f0fdf4' }}>
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-slate-100" style={{ backgroundColor: '#f0fdf4' }}>
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
                   '15x faster client onboarding (4\u20136 weeks \u2192 2 days)',
@@ -384,8 +384,8 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
 
           {/* 3. Migration Plan */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-100">
-              <h5 className="font-bold text-slate-800 flex items-center gap-2">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100">
+              <h5 className="font-bold text-slate-800 flex items-center gap-2 text-sm sm:text-base">
                 <span style={{ color: ACCENT }}>3.</span> Migration Plan
               </h5>
             </div>
@@ -441,7 +441,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                 </div>
               ))}
             </div>
-            <div className="px-6 py-3 border-t border-slate-100 bg-slate-50">
+            <div className="px-4 sm:px-6 py-3 border-t border-slate-100 bg-slate-50">
               <p className="text-xs text-slate-500">
                 <span className="font-semibold">Safety:</span> Keep Typeform/Jotform access for 90 days as backup during transition
               </p>
@@ -450,8 +450,8 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
 
           {/* 4. Success Metrics */}
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
-            <div className="px-6 py-4 border-b border-slate-100">
-              <h5 className="font-bold text-slate-800 flex items-center gap-2">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-b border-slate-100">
+              <h5 className="font-bold text-slate-800 flex items-center gap-2 text-sm sm:text-base">
                 <span style={{ color: ACCENT }}>4.</span> Success Metrics
               </h5>
             </div>
@@ -459,10 +459,10 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               <table className="w-full text-sm">
                 <thead>
                   <tr className="border-b border-slate-100">
-                    <th className="text-left px-4 py-3 font-semibold text-slate-600">Metric</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Current</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>Target</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: '#16a34a' }}>Improvement</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-slate-600 text-xs sm:text-sm">Metric</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm" style={{ color: '#dc2626' }}>Current</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm" style={{ color: ACCENT }}>Target</th>
+                    <th className="text-left px-2 sm:px-4 py-2 sm:py-3 font-semibold text-xs sm:text-sm" style={{ color: '#16a34a' }}>Improvement</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -473,17 +473,17 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                     ['Cost/Client', '$5,000', '$200', '96% savings'],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
-                      <td className="px-4 py-2.5 font-medium text-slate-700">{row[0]}</td>
-                      <td className="px-4 py-2.5" style={{ color: '#dc2626' }}>{row[1]}</td>
-                      <td className="px-4 py-2.5 font-medium" style={{ color: ACCENT }}>{row[2]}</td>
-                      <td className="px-4 py-2.5 font-bold" style={{ color: '#16a34a' }}>{row[3]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 font-medium text-slate-700 text-xs sm:text-sm">{row[0]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm" style={{ color: '#dc2626' }}>{row[1]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 font-medium text-xs sm:text-sm" style={{ color: ACCENT }}>{row[2]}</td>
+                      <td className="px-2 sm:px-4 py-2 sm:py-2.5 font-bold text-xs sm:text-sm" style={{ color: '#16a34a' }}>{row[3]}</td>
                     </tr>
                   ))}
                 </tbody>
               </table>
             </div>
-            <div className="px-6 py-4 border-t border-slate-100 bg-slate-50">
-              <div className="flex flex-wrap gap-6 text-sm">
+            <div className="px-4 sm:px-6 py-3 sm:py-4 border-t border-slate-100 bg-slate-50">
+              <div className="flex flex-wrap gap-3 sm:gap-6 text-xs sm:text-sm">
                 <div>
                   <span className="text-slate-500">Development:</span>{' '}
                   <span className="font-bold text-slate-700">$500K one-time</span>

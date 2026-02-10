@@ -23,7 +23,7 @@ export default function StoryHeader({ visible }: { visible: boolean }) {
         {/* Ticket-style card */}
         <div className="bg-white rounded-2xl border-2 border-amber-200 shadow-md overflow-hidden">
           {/* Top bar */}
-          <div className="bg-amber-50 border-b border-amber-200 px-6 py-3 flex items-center justify-between flex-wrap gap-2">
+          <div className="bg-amber-50 border-b border-amber-200 px-4 sm:px-6 py-2 sm:py-3 flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-3">
               <span className="text-xs font-bold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-amber-500">Feature</span>
               <span className="text-xs font-mono text-slate-400">FB-247</span>
@@ -36,8 +36,8 @@ export default function StoryHeader({ visible }: { visible: boolean }) {
           </div>
 
           {/* Body */}
-          <div className="p-6">
-            <h3 className="text-xl font-bold text-slate-800 mb-4">Configure Multi-Step Weight Loss Intake Form with Clinical Protocol Validation</h3>
+          <div className="p-4 sm:p-6">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-3 sm:mb-4">Configure Multi-Step Weight Loss Intake Form with Clinical Protocol Validation</h3>
 
             <div className="bg-slate-50 rounded-xl p-4 mb-4 text-sm text-slate-600 leading-relaxed">
               <p>

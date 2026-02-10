@@ -19,7 +19,7 @@ export default function WorkshopExtras({ visible }: { visible: boolean }) {
   const [showSprints, setShowSprints] = useState(true);
 
   return (
-    <div className="mt-12 space-y-10">
+    <div className="mt-8 sm:mt-12 space-y-8 sm:space-y-10">
       {/* Development Sprint Overview */}
       <div className={`transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
         <button onClick={() => setShowSprints(!showSprints)} className="flex items-center gap-3 mb-6 cursor-pointer">
@@ -39,7 +39,7 @@ export default function WorkshopExtras({ visible }: { visible: boolean }) {
 
         <div className={`overflow-hidden transition-all duration-500 ${showSprints ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'}`}>
           {/* Two-phase layout */}
-          <div className="grid md:grid-cols-2 gap-5 mb-6">
+          <div className="grid md:grid-cols-2 gap-4 sm:gap-5 mb-4 sm:mb-6">
             {/* Specifications Phase */}
             <div className="bg-white rounded-2xl border-2 overflow-hidden" style={{ borderColor: ACCENT + '40' }}>
               <div className="px-5 py-3 border-b" style={{ backgroundColor: ACCENT + '10', borderColor: ACCENT + '20' }}>

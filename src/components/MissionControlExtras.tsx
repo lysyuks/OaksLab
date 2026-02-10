@@ -8,7 +8,7 @@ import DecisionFramework from './mission/DecisionFramework';
 
 export default function MissionControlExtras({ visible }: { visible: boolean }) {
   return (
-    <div className="mt-12 space-y-12">
+    <div className="mt-8 sm:mt-12 space-y-8 sm:space-y-12">
       <DiscoveryFramework visible={visible} />
       <RaciMatrix visible={visible} />
       <CollaborationWorkflows visible={visible} />

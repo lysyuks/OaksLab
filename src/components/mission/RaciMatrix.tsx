@@ -61,26 +61,26 @@ export default function RaciMatrix({ visible }: { visible: boolean }) {
           <table className="w-full text-sm">
             <thead>
               <tr className="border-b border-slate-100">
-                <th className="text-left py-3 px-4 text-xs font-bold uppercase tracking-wider text-slate-400 w-48">Activity</th>
+                <th className="text-left py-2 sm:py-3 px-2 sm:px-4 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 w-32 sm:w-48">Activity</th>
                 {roles.map((role) => (
-                  <th key={role} className="py-3 px-3 text-xs font-bold uppercase tracking-wider text-slate-400 text-center">{role}</th>
+                  <th key={role} className="py-2 sm:py-3 px-1.5 sm:px-3 text-[10px] sm:text-xs font-bold uppercase tracking-wider text-slate-400 text-center">{role}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
               {activities.map((act, ri) => (
                 <tr key={ri} className={`border-b border-slate-50 transition-colors ${hovered?.row === ri ? 'bg-violet-50/40' : 'hover:bg-slate-50/50'}`}>
-                  <td className="py-2.5 px-4 text-sm font-medium text-slate-700">{act.name}</td>
+                  <td className="py-2 sm:py-2.5 px-2 sm:px-4 text-xs sm:text-sm font-medium text-slate-700">{act.name}</td>
                   {act.values.map((val, ci) => {
                     const style = raciColors[val];
                     const isHovered = hovered?.row === ri && hovered?.col === ci;
                     return (
-                      <td key={ci} className="py-2.5 px-3 text-center"
+                      <td key={ci} className="py-2 sm:py-2.5 px-1.5 sm:px-3 text-center"
                         onMouseEnter={() => setHovered({ row: ri, col: ci })}
                         onMouseLeave={() => setHovered(null)}
                       >
                         <span
-                          className={`inline-flex items-center justify-center w-8 h-8 rounded-lg text-xs font-bold transition-transform duration-200 ${isHovered ? 'scale-125 shadow-md' : ''}`}
+                          className={`inline-flex items-center justify-center w-6 h-6 sm:w-8 sm:h-8 rounded-md sm:rounded-lg text-[10px] sm:text-xs font-bold transition-transform duration-200 ${isHovered ? 'scale-125 shadow-md' : ''}`}
                           style={{ backgroundColor: style.bg, color: style.text }}
                           title={`${roles[ci]}: ${style.label}`}
                         >

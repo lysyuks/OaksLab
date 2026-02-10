@@ -87,15 +87,15 @@ export default function TestingPhases({ visible }: { visible: boolean }) {
 
       <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-[3000px] opacity-100' : 'max-h-0 opacity-0'}`}>
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-5 overflow-x-auto">
-          <div className="space-y-2.5 min-w-[400px]">
+          <div className="space-y-2.5">
             {phases.map((p, i) => {
               const leftPct = ((p.startWeek - START) / (TOTAL - START)) * 100;
               const widthPct = ((p.endWeek - p.startWeek + 1) / (TOTAL - START)) * 100;
               const isHovered = hovered === i;
               return (
-                <div key={i} className="flex items-center gap-3" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered(null)}>
-                  <div className="w-40 shrink-0 text-right pr-2">
-                    <div className="text-xs font-semibold text-slate-700 truncate">{p.name}</div>
+                <div key={i} className="flex items-center gap-2 sm:gap-3" onMouseEnter={() => setHovered(i)} onMouseLeave={() => setHovered(null)}>
+                  <div className="w-28 sm:w-40 shrink-0 text-right pr-1 sm:pr-2">
+                    <div className="text-[11px] sm:text-xs font-semibold text-slate-700 truncate">{p.name}</div>
                     <div className="text-[10px] text-slate-400">{p.weeks}</div>
                   </div>
                   <div className="flex-1 relative h-8 bg-slate-50 rounded-lg">

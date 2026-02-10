@@ -97,7 +97,7 @@ export default function FhirExtras({ visible }: { visible: boolean }) {
   const [showSnippet, setShowSnippet] = useState(false);
 
   return (
-    <div className="mt-12 space-y-10">
+    <div className="mt-8 sm:mt-12 space-y-8 sm:space-y-10">
 
       {/* 1. What is FHIR */}
       <div className={`transition-all duration-700 delay-100 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
@@ -360,15 +360,15 @@ export default function FhirExtras({ visible }: { visible: boolean }) {
               <strong style={{ color: '#0f766e' }}>With FHIR: 7.5 months</strong>
             </div>
           </div>
-          <div className="space-y-2 min-w-[350px]">
+          <div className="space-y-2">
             {timelinePhases.map((p, i) => {
               const leftPct = ((p.start - 18) / 9) * 100;
               const widthPct = ((p.end - p.start + 1) / 9) * 100;
               return (
-                <div key={i} className="flex items-center gap-3">
-                  <div className="w-36 shrink-0 text-right pr-2">
-                    <div className="text-xs font-semibold text-slate-700">{p.name}</div>
-                    <div className="text-xs text-slate-400">{p.weeks}</div>
+                <div key={i} className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-24 sm:w-36 shrink-0 text-right pr-1 sm:pr-2">
+                    <div className="text-[11px] sm:text-xs font-semibold text-slate-700 leading-tight">{p.name}</div>
+                    <div className="text-[10px] sm:text-xs text-slate-400">{p.weeks}</div>
                   </div>
                   <div className="flex-1 relative h-7 bg-slate-50 rounded-lg">
                     <div

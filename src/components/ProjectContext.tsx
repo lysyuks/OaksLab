@@ -19,20 +19,20 @@ export default function ProjectContext() {
   }, []);
 
   return (
-    <section ref={ref} className="py-16 md:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900 text-white">
-      <div className="max-w-6xl mx-auto px-6">
+    <section ref={ref} className="py-12 sm:py-16 md:py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-teal-900 text-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div
           className={`text-center mb-14 transition-all duration-700 ${
             visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
           }`}
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-3">Project Context</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Project Context</h2>
           <p className="text-slate-400 max-w-xl mx-auto">
             Why Weight Loss Clinic is building this — and what changes for healthcare providers.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
           {/* Current State */}
           <div
             className={`rounded-2xl p-6 transition-all duration-700 delay-100 ${

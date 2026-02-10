@@ -7,7 +7,7 @@ import ProjectTimeline from './blueprint/ProjectTimeline';
 
 export default function BlueprintExtras({ visible }: { visible: boolean }) {
   return (
-    <div className="mt-12 space-y-12">
+    <div className="mt-8 sm:mt-12 space-y-8 sm:space-y-12">
       <ScopeCanvas visible={visible} />
       <EpicsPillars visible={visible} />
       <UserRoles visible={visible} />
