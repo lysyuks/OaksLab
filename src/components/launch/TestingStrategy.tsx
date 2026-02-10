@@ -82,29 +82,39 @@ export default function TestingStrategy({ visible }: { visible: boolean }) {
       <div className={`overflow-hidden transition-all duration-500 ${expanded ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}>
         {/* Visual Pyramid */}
         <div className="bg-white rounded-2xl border border-slate-100 shadow-sm p-6 mb-6">
-          <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-6 text-center">Testing Pyramid</h5>
-          <div className="flex flex-col items-center gap-1.5 mb-6">
-            {levels.map((lvl, i) => (
-              <button
-                key={i}
-                onClick={() => setOpenLevel(openLevel === i ? null : i)}
-                className="relative group cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
-                style={{ width: lvl.width, maxWidth: '500px', minWidth: '140px' }}
-              >
-                <div
-                  className="rounded-lg py-3 px-4 flex items-center justify-between border-2 transition-all duration-200"
-                  style={{
-                    backgroundColor: openLevel === i ? lvl.bg : lvl.bg,
-                    borderColor: openLevel === i ? lvl.color : lvl.border,
-                    boxShadow: openLevel === i ? `0 0 0 3px ${lvl.color}20` : 'none',
-                  }}
-                >
-                  <span className="text-sm font-bold" style={{ color: lvl.color }}>{lvl.label}</span>
-                  <span className="text-xs font-bold px-2 py-0.5 rounded-full text-white" style={{ backgroundColor: lvl.color }}>{lvl.pct}</span>
-                </div>
-              </button>
-            ))}
-          </div>
+          <h5 className="text-sm font-bold uppercase tracking-wider text-slate-400 mb-4 text-center">Testing Pyramid</h5>
+          <svg viewBox="0 0 500 330" className="w-full max-w-lg mx-auto block">
+            <style>{`
+              .pyramid-level { cursor: pointer; transition: opacity 0.2s, filter 0.2s; }
+              .pyramid-level:hover { opacity: 1 !important; filter: brightness(1.08); }
+            `}</style>
+
+            {/* E2E Tests — Top Triangle */}
+            <g className="pyramid-level" onClick={() => setOpenLevel(openLevel === 0 ? null : 0)} opacity={openLevel === 0 ? 1 : 0.88}>
+              <polygon points="250,10 184,108 316,108" fill="#ef4444" />
+              {openLevel === 0 && <polygon points="250,10 184,108 316,108" fill="none" stroke="#dc2626" strokeWidth="3" />}
+              <text x="250" y="68" textAnchor="middle" fill="white" fontSize="13" fontWeight="700" style={{ pointerEvents: 'none' }}>E2E Tests</text>
+              <text x="250" y="86" textAnchor="middle" fill="white" fontSize="11" opacity="0.9" style={{ pointerEvents: 'none' }}>10%</text>
+            </g>
+
+            {/* Integration Tests — Middle Trapezoid */}
+            <g className="pyramid-level" onClick={() => setOpenLevel(openLevel === 1 ? null : 1)} opacity={openLevel === 1 ? 1 : 0.88}>
+              <polygon points="180,114 113,212 387,212 320,114" fill="#f59e0b" />
+              {openLevel === 1 && <polygon points="180,114 113,212 387,212 320,114" fill="none" stroke="#d97706" strokeWidth="3" />}
+              <text x="250" y="155" textAnchor="middle" fill="white" fontSize="15" fontWeight="700" style={{ pointerEvents: 'none' }}>Integration Tests</text>
+              <text x="250" y="177" textAnchor="middle" fill="white" fontSize="12" opacity="0.9" style={{ pointerEvents: 'none' }}>20%</text>
+              <text x="250" y="199" textAnchor="middle" fill="white" fontSize="10" opacity="0.65" style={{ pointerEvents: 'none' }}>API &amp; workflow testing</text>
+            </g>
+
+            {/* Unit Tests — Bottom Trapezoid */}
+            <g className="pyramid-level" onClick={() => setOpenLevel(openLevel === 2 ? null : 2)} opacity={openLevel === 2 ? 1 : 0.88}>
+              <polygon points="109,218 40,320 460,320 391,218" fill="#059669" />
+              {openLevel === 2 && <polygon points="109,218 40,320 460,320 391,218" fill="none" stroke="#047857" strokeWidth="3" />}
+              <text x="250" y="258" textAnchor="middle" fill="white" fontSize="17" fontWeight="700" style={{ pointerEvents: 'none' }}>Unit Tests</text>
+              <text x="250" y="282" textAnchor="middle" fill="white" fontSize="14" opacity="0.9" style={{ pointerEvents: 'none' }}>70%</text>
+              <text x="250" y="306" textAnchor="middle" fill="white" fontSize="10" opacity="0.65" style={{ pointerEvents: 'none' }}>Component-level testing during development</text>
+            </g>
+          </svg>
         </div>
 
         {/* Expandable detail cards */}
