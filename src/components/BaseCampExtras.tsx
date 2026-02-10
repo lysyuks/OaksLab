@@ -342,7 +342,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                   <tr className="border-b border-slate-100">
                     <th className="text-left px-4 py-3 font-semibold text-slate-600">What Changes</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Before (Typeform/Jotform)</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (MediCare Builder)</th>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (WLC Builder)</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -368,7 +368,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
                   '15x faster client onboarding (4\u20136 weeks \u2192 2 days)',
-                  'Self-service = less MediCare Solutions team burden',
+                  'Self-service = less Weight Loss Clinic team burden',
                   'Built-in MWL Clinical Protocol validator',
                   'Seamless integration with scheduling, labs, meds, fulfillment',
                   'Complete platform ownership',

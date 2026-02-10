@@ -83,7 +83,7 @@ export default function ScopeCanvas({ visible }: { visible: boolean }) {
               <span className="w-7 h-7 rounded-lg bg-slate-400 flex items-center justify-center text-white text-xs font-bold">—</span>
               <h5 className="font-bold text-slate-500 text-sm uppercase tracking-wider">Out of Scope</h5>
             </div>
-            <p className="text-xs text-slate-400 mb-3 italic">Already handled by existing MediCare Solutions platform</p>
+            <p className="text-xs text-slate-400 mb-3 italic">Already handled by existing Weight Loss Clinic platform</p>
             <ul className="space-y-2.5">
               {outOfScope.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-slate-500">

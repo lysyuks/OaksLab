@@ -29,7 +29,7 @@ export const stations: StationData[] = [
       'Technical environment setup',
     ],
     details: [
-      'Define the "why" — why MediCare Solutions needs to own this piece of the stack',
+      'Define the "why" — why Weight Loss Clinic needs to own this piece of the stack',
       'Document current limitations and pain points with Typeform/Jotform',
       'Agree on MVP scope vs. future phases',
     ],
