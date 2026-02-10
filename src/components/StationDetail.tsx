@@ -24,7 +24,7 @@ export default function StationDetail({ station, isEven }: Props) {
           observer.disconnect();
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.01 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
