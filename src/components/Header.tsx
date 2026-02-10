@@ -53,7 +53,7 @@ export default function Header() {
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: `linear-gradient(135deg, ${BRAND}, #ff6b8a, #ff8fa3)` }}
           >
-            Intake Form Platform
+            Intake Form Solution
           </span>
         </h1>
 
