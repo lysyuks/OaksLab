@@ -30,7 +30,7 @@ const risks: Risk[] = [
       'Early Formsort/Embeddables export access',
       'Dry-run migration scripts',
       '30-day parallel run',
-      'Manual QA on every migrated funnel',
+      'Manual QA on every migrated form',
     ],
   },
   {

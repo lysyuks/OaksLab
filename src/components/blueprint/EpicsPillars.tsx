@@ -11,7 +11,7 @@ interface Epic {
 
 const epics: Epic[] = [
   {
-    title: 'Funnel Builder Engine',
+    title: 'Intake Form Builder Engine',
     emoji: '🔧',
     color: '#2563eb',
     items: [
@@ -41,7 +41,7 @@ const epics: Epic[] = [
     items: [
       'Client dashboard',
       'Template marketplace',
-      'Funnel analytics',
+      'Form analytics',
       'User management',
       'White-label branding',
     ],

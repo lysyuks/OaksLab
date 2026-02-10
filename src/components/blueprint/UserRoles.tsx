@@ -27,7 +27,7 @@ const roles: Role[] = [
     icon: '⚙️',
     color: '#7c3aed',
     permissions: [
-      'Create / edit / publish funnels',
+      'Create / edit / publish forms',
       'View analytics for their clinic',
       'Manage team members',
       'Configure branding',
@@ -39,7 +39,7 @@ const roles: Role[] = [
     icon: '👥',
     color: '#0891b2',
     permissions: [
-      'View / edit assigned funnels',
+      'View / edit assigned forms',
       'Limited permissions',
       'Preview mode only',
       'Cannot publish',

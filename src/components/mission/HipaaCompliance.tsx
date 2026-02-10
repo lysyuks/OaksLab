@@ -104,7 +104,7 @@ export default function HipaaCompliance({ visible }: { visible: boolean }) {
         <div className="bg-violet-50/50 border border-violet-200 rounded-2xl p-5 mb-6">
           <p className="text-sm text-slate-600 leading-relaxed">
             <span className="font-bold text-violet-700">HIPAA</span> (Health Insurance Portability and Accountability Act) protects patient health information (PHI).
-            Our platform handles PHI throughout the intake funnel, so we must ensure <span className="font-semibold">technical, administrative, and physical safeguards</span> are in place at every layer.
+            Our platform handles PHI throughout the intake process, so we must ensure <span className="font-semibold">technical, administrative, and physical safeguards</span> are in place at every layer.
           </p>
         </div>
 

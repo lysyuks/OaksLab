@@ -11,8 +11,8 @@ import SpecPhilosophy from './workshop/SpecPhilosophy';
 const ACCENT = '#f59e0b';
 
 const sprints = [
-  { id: '1\u20134', weeks: 'Weeks 7\u201314', title: 'Funnel Builder Engine + Clinical Protocol Validator', color: '#f59e0b', items: ['No-code builder with branching logic editor', 'Protocol engine: clinical rules \u2192 configuration', 'Auto-scoring for validated instruments (PHQ-9, GAD-7)', 'Compliance validator for funnel checks'] },
-  { id: '5\u20138', weeks: 'Weeks 15\u201323', title: 'Client Portal + Integration Layer', color: '#2563eb', items: ['Client dashboard & template library', 'EHR integration (Healthie, scheduling)', 'Payment stack integration', 'Patient-facing funnel renderer'] },
+  { id: '1\u20134', weeks: 'Weeks 7\u201314', title: 'Intake Form Builder Engine + Clinical Protocol Validator', color: '#f59e0b', items: ['No-code builder with branching logic editor', 'Protocol engine: clinical rules \u2192 configuration', 'Auto-scoring for validated instruments (PHQ-9, GAD-7)', 'Compliance validator for form checks'] },
+  { id: '5\u20138', weeks: 'Weeks 15\u201323', title: 'Client Portal + Integration Layer', color: '#2563eb', items: ['Client dashboard & template library', 'EHR integration (Healthie, scheduling)', 'Payment stack integration', 'Patient-facing form renderer'] },
 ];
 
 export default function WorkshopExtras({ visible }: { visible: boolean }) {
@@ -69,7 +69,7 @@ export default function WorkshopExtras({ visible }: { visible: boolean }) {
                 <span className="text-xs text-slate-400 ml-5">Weeks 7–23 · 8 sprints</span>
               </div>
               <ul className="p-5 space-y-2">
-                {['Sprint 1\u20134: Funnel Builder Engine + Protocol Validator', 'Sprint 5\u20138: Client Portal + Integration Layer', 'Continuous integration & automated testing', 'Biweekly sprint reviews with stakeholders'].map((item, i) => (
+                {['Sprint 1\u20134: Intake Form Builder Engine + Protocol Validator', 'Sprint 5\u20138: Client Portal + Integration Layer', 'Continuous integration & automated testing', 'Biweekly sprint reviews with stakeholders'].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-slate-600">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full shrink-0" style={{ backgroundColor: '#2563eb' }} />
                     {item}

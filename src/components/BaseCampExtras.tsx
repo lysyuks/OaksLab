@@ -88,7 +88,7 @@ const questionCategories = [
     ),
     questions: [
       'Who are your ideal pilot clients and why?',
-      'What\'s the most complex funnel you\'ve built to date?',
+      'What\'s the most complex intake form you\'ve built to date?',
       'What do clients complain about most today?',
       'How long does onboarding a new client currently take?',
     ],
@@ -272,8 +272,8 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
             </svg>
           </div>
           <div>
-            <h4 className="text-lg font-bold text-slate-800">Current Solution vs. In-House Builder</h4>
-            <p className="text-sm text-slate-500">Moving from Formsort/Embeddables to our own platform</p>
+            <h4 className="text-lg font-bold text-slate-800">Current State Analysis</h4>
+            <p className="text-sm text-slate-500">Understanding the current intake form challenges and defining the strategic opportunity</p>
           </div>
         </div>
 
@@ -300,7 +300,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                     ['Setup Time', '2 months', '2 months', 'Slow client onboarding'],
                     ['Integration', 'Not native', 'Not native', 'Data silos, manual work'],
                     ['Clinical Protocol', 'Manual', 'Manual', 'Risk of non-compliance'],
-                    ['Who Configures', 'Internal team', 'Internal team', 'Heavy support burden'],
+                    ['Who Configures', 'MediCare team', 'MediCare team', 'Heavy support burden'],
                     ['Maintenance', 'Ongoing effort', 'Difficult', 'Technical debt'],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
@@ -324,7 +324,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
             <div className="px-6 py-4 border-t border-slate-100" style={{ backgroundColor: '#fef2f2' }}>
               <p className="text-sm font-medium text-slate-700">
                 <span style={{ color: '#dc2626' }} className="font-bold">Core Problem: </span>
-                These tools prevent the platform from being a true end-to-end solution. Intake forms are the missing piece.
+                These tools prevent MediCare Solutions from delivering a seamless end-to-end patient experience. Intake forms are the missing piece.
               </p>
             </div>
           </div>
@@ -342,13 +342,13 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                   <tr className="border-b border-slate-100">
                     <th className="text-left px-4 py-3 font-semibold text-slate-600">What Changes</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Before (Formsort/Embeddables)</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (Custom Builder)</th>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (MediCare Builder)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
                     ['Setup Time', '2 months', '2 days'],
-                    ['Who Builds Forms', 'Internal team', 'Client self-service'],
+                    ['Who Builds Forms', 'MediCare team', 'Client self-service'],
                     ['Protocol Validation', 'Manual', 'Automatic built-in'],
                     ['Integration', 'Custom API work', 'Native to platform'],
                     ['Platform Completeness', 'Missing piece', 'End-to-end'],
@@ -368,7 +368,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
                   '30x faster client onboarding (2 months \u2192 2 days)',
-                  'Self-service = less Internal team burden',
+                  'Self-service = less MediCare Solutions team burden',
                   'Built-in MWL Clinical Protocol validator',
                   'Seamless integration with scheduling, labs, meds, fulfillment',
                   'Complete platform ownership',

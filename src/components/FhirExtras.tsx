@@ -18,7 +18,7 @@ const newEpics = [
 
 const impactItems = [
   { label: 'Timeline', value: '+7-8 weeks (7.5 months total)', icon: '📅' },
-  { label: 'For Clients', value: '+30 min setup/funnel, saves hours monthly', icon: '⚙️' },
+  { label: 'For Clients', value: '+30 min setup/form, saves hours monthly', icon: '⚙️' },
   { label: 'For Patients', value: 'No change in experience', icon: '🧑‍⚕️' },
   { label: 'For Doctors', value: 'Automatic data in their EHR', icon: '🩺' },
 ];

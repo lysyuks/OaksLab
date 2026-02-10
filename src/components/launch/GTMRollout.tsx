@@ -10,12 +10,12 @@ const rolloutPhases = [
     target: '2–3 Pilot Clients',
     color: '#f59e0b',
     clients: [
-      { name: 'Dr. Smith Weight Loss Clinic', why: 'Simple use case, 50 patients/month, tech-savvy admin', funnel: 'Weight loss intake with PHQ-9 screening' },
-      { name: 'ClearSkin Dermatology', why: 'Photo upload testing, 100 patients/month', funnel: 'Dermatology intake with photo upload' },
-      { name: 'TBD based on interest', why: 'Different use case for diversity', funnel: 'To be determined' },
+      { name: 'Dr. Smith Weight Loss Clinic', why: 'Simple use case, 50 patients/month, tech-savvy admin', form: 'Weight loss intake with PHQ-9 screening' },
+      { name: 'ClearSkin Dermatology', why: 'Photo upload testing, 100 patients/month', form: 'Dermatology intake with photo upload' },
+      { name: 'TBD based on interest', why: 'Different use case for diversity', form: 'To be determined' },
     ],
-    activities: ['Personal onboarding calls (1h per client)', 'Migrate first funnel live on the call', 'Daily check-in calls (15 min) for first week', 'Dedicated Slack channel: #pilot-launch'],
-    metrics: ['All 3 clients create & publish funnels', '50+ patients complete forms E2E', 'Integration success: >95%', 'Critical bugs: 0', 'Client satisfaction: 8/10+'],
+    activities: ['Personal onboarding calls (1h per client)', 'Migrate first form live on the call', 'Daily check-in calls (15 min) for first week', 'Dedicated Slack channel: #pilot-launch'],
+    metrics: ['All 3 clients create & publish forms', '50+ patients complete forms E2E', 'Integration success: >95%', 'Critical bugs: 0', 'Client satisfaction: 8/10+'],
     support: '<1 hour response · Dedicated PM + engineer on-call · Daily check-ins',
   },
   {
@@ -26,7 +26,7 @@ const rolloutPhases = [
     color: '#2563eb',
     clients: [],
     activities: ['Group onboarding webinars (3–5 clients/session)', 'Self-service onboarding with tooltips', 'Knowledge base articles + video tutorials', '<4 hour email response time', 'Weekly office hours (Q&A sessions)'],
-    metrics: ['3–5 new funnels/week', '200+ form completions/week', 'Support volume trending down', 'Feature adoption rates tracked'],
+    metrics: ['3–5 new forms/week', '200+ form completions/week', 'Support volume trending down', 'Feature adoption rates tracked'],
     support: '<4 hour response · Webinars · Office hours',
   },
   {
@@ -36,7 +36,7 @@ const rolloutPhases = [
     target: 'All Clients (50–100)',
     color: '#059669',
     clients: [],
-    activities: ['Official launch announcement + blog post', 'Product demo video (5 min)', 'Case studies from pilot clients', 'Complete knowledge base (20+ articles)', 'Template library (15+ pre-built funnels)', 'Weekly live onboarding webinars'],
+    activities: ['Official launch announcement + blog post', 'Product demo video (5 min)', 'Case studies from pilot clients', 'Complete knowledge base (20+ articles)', 'Template library (15+ pre-built forms)', 'Weekly live onboarding webinars'],
     metrics: ['60%+ adoption in 90 days', 'Config time: <2 days (vs 2 months)', 'Integration success: 98%+', 'Patient completion: >85%', 'NPS score: 50+', 'Formsort usage declining 20%+/month'],
     support: 'Tiered: Enterprise (<2h) · Pro (<8h) · Standard (email + KB)',
   },
@@ -52,8 +52,8 @@ const rollbackTriggers = [
 const rollbackSteps = [
   { step: 1, text: 'Pause new client onboarding immediately', time: '0h' },
   { step: 2, text: 'Notify affected clients within 1 hour', time: '1h' },
-  { step: 3, text: 'Revert to Formsort/Embeddables for new funnels', time: '2h' },
-  { step: 4, text: 'Keep existing funnels running if stable', time: '2h' },
+  { step: 3, text: 'Revert to Formsort/Embeddables for new forms', time: '2h' },
+  { step: 4, text: 'Keep existing forms running if stable', time: '2h' },
   { step: 5, text: 'Root cause analysis', time: '24h' },
   { step: 6, text: 'Fix plan documented', time: '48h' },
   { step: 7, text: 'Re-launch decision', time: '1 week' },
@@ -132,7 +132,7 @@ export default function GTMRollout({ visible }: { visible: boolean }) {
                             <div key={j} className="rounded-lg p-3 text-sm" style={{ backgroundColor: rp.color + '08', borderLeft: `3px solid ${rp.color}` }}>
                               <span className="font-semibold text-slate-800">{c.name}</span>
                               <span className="text-slate-400 ml-2 text-xs">— {c.why}</span>
-                              <div className="text-xs mt-0.5" style={{ color: rp.color }}>Funnel: {c.funnel}</div>
+                              <div className="text-xs mt-0.5" style={{ color: rp.color }}>Form: {c.form}</div>
                             </div>
                           ))}
                         </div>

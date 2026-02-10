@@ -28,7 +28,7 @@ export default function ProjectContext() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Project Context</h2>
           <p className="text-slate-400 max-w-xl mx-auto">
-            Why we built this — and what changes for the client's customers.
+            Why MediCare Solutions is building this — and what changes for healthcare providers.
           </p>
         </div>
 
@@ -50,7 +50,7 @@ export default function ProjectContext() {
               <h3 className="text-lg font-bold text-red-300">Current State</h3>
             </div>
             <p className="text-sm text-slate-300 mb-4">
-              Using Formsort / Embeddables as third-party funnel builders.
+              Using Formsort / Embeddables as third-party intake form builders.
             </p>
             <ul className="space-y-2.5">
               {[
@@ -113,7 +113,7 @@ export default function ProjectContext() {
               <h3 className="text-lg font-bold text-green-300">Future State</h3>
             </div>
             <p className="text-sm text-slate-300 mb-4">
-              Self-service funnel builder with built-in clinical intelligence.
+              Self-service intake form builder with built-in clinical intelligence.
             </p>
             <ul className="space-y-2.5">
               {[

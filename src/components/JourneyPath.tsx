@@ -38,7 +38,7 @@ export default function JourneyPath() {
           The Journey
         </h2>
         <p className="text-center text-slate-500 mb-16 max-w-xl mx-auto">
-          Five stations across ~7 months. Click any station to explore.
+          A comprehensive 29-week initiative structured into 5 strategic phases. Explore each phase to understand the complete transformation journey.
         </p>
 
         {/* Desktop: horizontal path */}

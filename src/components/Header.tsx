@@ -40,20 +40,20 @@ export default function Header() {
           style={{ backgroundColor: `${BRAND}18`, border: `1px solid ${BRAND}40`, color: '#ff6b8a' }}
         >
           <span className="w-2 h-2 rounded-full animate-pulse" style={{ backgroundColor: BRAND }} />
-          Project Roadmap 2026
+          Product Strategy · 2026
         </div>
 
         {/* Title */}
         <h1
           className={`text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight leading-[1.05] transition-all duration-700 delay-200 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
-          <span className="text-white">Healthcare</span>
+          <span className="text-white">MediCare Solutions</span>
           <br />
           <span
             className="bg-clip-text text-transparent"
             style={{ backgroundImage: `linear-gradient(135deg, ${BRAND}, #ff6b8a, #ff8fa3)` }}
           >
-            Funnel Builder
+            Intake Form Platform
           </span>
         </h1>
 
@@ -62,7 +62,15 @@ export default function Header() {
           className={`mt-6 text-xl md:text-2xl font-light max-w-2xl mx-auto transition-all duration-700 delay-400 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
           style={{ color: 'rgba(255,255,255,0.55)' }}
         >
-          From Vision to Launch — Roadmap
+          Strategic Product Roadmap — From Vision to Launch
+        </p>
+
+        {/* Description */}
+        <p
+          className={`mt-5 text-sm md:text-base font-light max-w-3xl mx-auto leading-relaxed transition-all duration-700 delay-[450ms] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          style={{ color: 'rgba(255,255,255,0.35)' }}
+        >
+          Patient intake forms are the first touchpoint in healthcare delivery. This strategic initiative transforms how healthcare providers collect patient information — creating a self-service platform that reduces setup time from 2 months to 2 days while ensuring clinical compliance and seamless integration with existing healthcare systems.
         </p>
 
         {/* Divider */}
@@ -75,7 +83,7 @@ export default function Header() {
           className={`flex flex-wrap justify-center gap-6 md:gap-12 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
         >
           {[
-            { value: '~7', label: 'Month Timeline', icon: '📅' },
+            { value: '29', label: 'Week Timeline', icon: '📅' },
             { value: '5', label: 'Key Phases', icon: '🎯' },
             { value: '3', label: 'Pilot Clients', icon: '🚀' },
           ].map((stat) => (

@@ -3,7 +3,7 @@ import { useState } from 'react';
 const ACCENT = '#f59e0b';
 
 const dataModelJson = `{
-  "funnel_id": "uuid",
+  "form_id": "uuid",
   "client_id": "uuid",
   "name": "Weight Loss Intake - Dr. Smith Clinic",
   "status": "draft | published | archived",
@@ -42,11 +42,11 @@ const dataModelJson = `{
 }`;
 
 const endpoints = [
-  { method: 'POST', path: '/api/funnels', desc: 'Create new funnel' },
-  { method: 'GET', path: '/api/funnels/:id', desc: 'Get funnel details' },
-  { method: 'PATCH', path: '/api/funnels/:id', desc: 'Update funnel (auto-save)' },
-  { method: 'POST', path: '/api/funnels/:id/publish', desc: 'Publish funnel' },
-  { method: 'POST', path: '/api/funnels/:id/validate', desc: 'Validate against protocol' },
+  { method: 'POST', path: '/api/forms', desc: 'Create new form' },
+  { method: 'GET', path: '/api/forms/:id', desc: 'Get form details' },
+  { method: 'PATCH', path: '/api/forms/:id', desc: 'Update form (auto-save)' },
+  { method: 'POST', path: '/api/forms/:id/publish', desc: 'Publish form' },
+  { method: 'POST', path: '/api/forms/:id/validate', desc: 'Validate against protocol' },
   { method: 'GET', path: '/api/protocols/:category', desc: 'Get protocol requirements' },
   { method: 'GET', path: '/api/field-types', desc: 'Get available field types' },
 ];

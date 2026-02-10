@@ -29,7 +29,7 @@ const columns: { label: string; color: string; cards: StoryCard[] }[] = [
         title: 'Auto-validate against protocol',
         points: 13,
         description:
-          "As a Platform Admin, I want the system to auto-validate funnels so clients can't publish non-compliant forms.",
+          "As a Platform Admin, I want the system to auto-validate forms so clients can't publish non-compliant intake forms.",
       },
       {
         epic: 'Epic 5',
@@ -51,7 +51,7 @@ const columns: { label: string; color: string; cards: StoryCard[] }[] = [
         title: 'Template library',
         points: 5,
         description:
-          'As a Client Admin, I want to browse and clone pre-built funnel templates.',
+          'As a Client Admin, I want to browse and clone pre-built form templates.',
       },
       {
         epic: 'Epic 4',

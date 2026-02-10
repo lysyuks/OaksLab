@@ -14,7 +14,7 @@ const levels = [
     who: 'QA team + automated scripts',
     tools: 'Playwright, Selenium',
     examples: [
-      'Complete funnel creation flow (login → create → add fields → validate → publish)',
+      'Complete form creation flow (login → create → add fields → validate → publish)',
       'Patient form submission flow (open form → fill out → conditional logic → submit)',
       'Client admin workflow (login → dashboard → template → customize → preview → publish)',
     ],
@@ -32,8 +32,8 @@ const levels = [
     who: 'Engineers + QA team',
     tools: 'Cypress, Postman / Newman',
     examples: [
-      'API endpoint testing (create funnel → validate → publish)',
-      'Database operations (save draft, retrieve funnel)',
+      'API endpoint testing (create form → validate → publish)',
+      'Database operations (save draft, retrieve form)',
       'Third-party integrations (Healthie, scheduling APIs)',
       'Authentication flow',
     ],

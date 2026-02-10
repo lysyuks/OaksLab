@@ -19,7 +19,7 @@ const pilotTraits = [
 ];
 
 const scenarios = [
-  { id: 1, title: 'Create Weight Loss Intake from Scratch', outcome: 'Form publishes successfully and is live', steps: ['Login as Client Admin', 'Create new funnel for weight loss', 'Add 8–10 fields (name, weight, medications, goals)', 'Add conditional logic for diabetes questions', 'Preview → Validate against protocol → Fix errors → Publish'] },
+  { id: 1, title: 'Create Weight Loss Intake from Scratch', outcome: 'Form publishes successfully and is live', steps: ['Login as Client Admin', 'Create new intake form for weight loss', 'Add 8–10 fields (name, weight, medications, goals)', 'Add conditional logic for diabetes questions', 'Preview → Validate against protocol → Fix errors → Publish'] },
   { id: 2, title: 'Use Template and Customize', outcome: 'Customized template works correctly', steps: ['Browse template library → Select "Dermatology Intake"', 'Customize branding (logo, colors)', 'Add 2 custom fields + test photo upload', 'Preview on mobile device → Publish'] },
   { id: 3, title: 'Patient Fills Out Form (E2E)', outcome: 'Submission reaches doctor\'s clinical notes', steps: ['Access published form via URL', 'Fill required fields → Upload photo → Trigger conditional logic', 'Save progress → Exit → Resume from email link', 'Complete and submit → Verify doctor receives data'] },
   { id: 4, title: 'Handle Errors & Edge Cases', outcome: 'All errors handled gracefully', steps: ['Create form with 50+ fields', 'Test max file upload size', 'Test with poor internet connection', 'Publish without protocol fields → Concurrent editing'] },
