@@ -36,7 +36,7 @@ const risks: Risk[] = [
   {
     title: 'Integration Reliability',
     severity: 'medium',
-    why: 'Depends on OLH APIs, network failures',
+    why: 'Depends on platform APIs, network failures',
     mitigations: [
       'Comprehensive integration testing',
       'Retry logic & queue system',

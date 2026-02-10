@@ -29,7 +29,7 @@ export const stations: StationData[] = [
       'Technical environment setup',
     ],
     details: [
-      'Define the "why" — why OpenLoop needs to own this piece of the stack',
+      'Define the "why" — why the client needs to own this piece of the stack',
       'Map current pain points with Formsort/Embeddables in detail',
       'Agree on MVP scope vs. future phases',
     ],
@@ -55,7 +55,7 @@ export const stations: StationData[] = [
       'Design the Protocol Engine — how clinical rules become configuration',
       'Define the Funnel Builder interface and component library',
       'Plan the embeddable Funnel Renderer architecture',
-      'Map integration points with OpenLoop EHR, scheduling, and payments',
+      'Map integration points with existing EHR, scheduling, and payments',
     ],
     gradient: 'from-blue-500 to-blue-600',
     accentColor: '#2563eb',

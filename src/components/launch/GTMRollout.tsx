@@ -33,7 +33,7 @@ const rolloutPhases = [
     phase: 3,
     title: 'General Availability — Full Rollout',
     timing: 'Week 32+',
-    target: 'All OLH Clients (50–100)',
+    target: 'All Clients (50–100)',
     color: '#059669',
     clients: [],
     activities: ['Official launch announcement + blog post', 'Product demo video (5 min)', 'Case studies from pilot clients', 'Complete knowledge base (20+ articles)', 'Template library (15+ pre-built funnels)', 'Weekly live onboarding webinars'],

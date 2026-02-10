@@ -8,7 +8,7 @@ const inScope = [
   'Client self-service configuration portal',
   'Template library (10+ pre-built funnels)',
   'Real-time preview mode',
-  'Integration layer with existing OLH services',
+  'Integration layer with existing platform services',
   'Analytics dashboard',
   'HIPAA-compliant data handling',
 ];
@@ -23,7 +23,7 @@ const outOfScope = [
 ];
 
 const dependencies = [
-  'Existing OLH API stability',
+  'Existing platform API stability',
   'MWL Clinical Protocol documentation',
   'Design system / component library',
   'Authentication system',
@@ -83,7 +83,7 @@ export default function ScopeCanvas({ visible }: { visible: boolean }) {
               <span className="w-7 h-7 rounded-lg bg-slate-400 flex items-center justify-center text-white text-xs font-bold">—</span>
               <h5 className="font-bold text-slate-500 text-sm uppercase tracking-wider">Out of Scope</h5>
             </div>
-            <p className="text-xs text-slate-400 mb-3 italic">Already handled by existing OLH platform</p>
+            <p className="text-xs text-slate-400 mb-3 italic">Already handled by existing platform platform</p>
             <ul className="space-y-2.5">
               {outOfScope.map((item, i) => (
                 <li key={i} className="flex items-start gap-2 text-sm text-slate-500">

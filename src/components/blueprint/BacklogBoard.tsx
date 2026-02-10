@@ -29,7 +29,7 @@ const columns: { label: string; color: string; cards: StoryCard[] }[] = [
         title: 'Auto-validate against protocol',
         points: 13,
         description:
-          "As an OLH Admin, I want the system to auto-validate funnels so clients can't publish non-compliant forms.",
+          "As a Platform Admin, I want the system to auto-validate funnels so clients can't publish non-compliant forms.",
       },
       {
         epic: 'Epic 5',

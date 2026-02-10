@@ -26,7 +26,7 @@ export default function StoryHeader({ visible }: { visible: boolean }) {
           <div className="bg-amber-50 border-b border-amber-200 px-6 py-3 flex items-center justify-between flex-wrap gap-2">
             <div className="flex items-center gap-3">
               <span className="text-xs font-bold uppercase tracking-wider text-white px-2.5 py-1 rounded-full bg-amber-500">Feature</span>
-              <span className="text-xs font-mono text-slate-400">OLH-247</span>
+              <span className="text-xs font-mono text-slate-400">FB-247</span>
             </div>
             <div className="flex items-center gap-3">
               <span className="text-xs font-bold px-2.5 py-1 rounded-full bg-red-100 text-red-700">High Priority</span>

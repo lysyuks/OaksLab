@@ -292,7 +292,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                     <th className="text-left px-4 py-3 font-semibold text-slate-600">Issue</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Formsort</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Embeddables</th>
-                    <th className="text-left px-4 py-3 font-semibold text-slate-600">Impact on OLH</th>
+                    <th className="text-left px-4 py-3 font-semibold text-slate-600">Business Impact</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -300,7 +300,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                     ['Setup Time', '2 months', '2 months', 'Slow client onboarding'],
                     ['Integration', 'Not native', 'Not native', 'Data silos, manual work'],
                     ['Clinical Protocol', 'Manual', 'Manual', 'Risk of non-compliance'],
-                    ['Who Configures', 'OLH team', 'OLH team', 'Heavy support burden'],
+                    ['Who Configures', 'Internal team', 'Internal team', 'Heavy support burden'],
                     ['Maintenance', 'Ongoing effort', 'Difficult', 'Technical debt'],
                   ].map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-slate-50/50' : ''}>
@@ -324,7 +324,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
             <div className="px-6 py-4 border-t border-slate-100" style={{ backgroundColor: '#fef2f2' }}>
               <p className="text-sm font-medium text-slate-700">
                 <span style={{ color: '#dc2626' }} className="font-bold">Core Problem: </span>
-                These tools prevent OLH from being a true end-to-end platform. Intake forms are the missing piece.
+                These tools prevent the platform from being a true end-to-end solution. Intake forms are the missing piece.
               </p>
             </div>
           </div>
@@ -333,7 +333,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
           <div className="bg-white rounded-2xl border border-slate-100 shadow-sm overflow-hidden">
             <div className="px-6 py-4 border-b border-slate-100" style={{ backgroundColor: '#f0fdf4' }}>
               <h5 className="font-bold text-slate-800 flex items-center gap-2">
-                <span style={{ color: ACCENT }}>2.</span> OLH In-House Solution Advantages
+                <span style={{ color: ACCENT }}>2.</span> In-House Solution Advantages
               </h5>
             </div>
             <div className="overflow-x-auto">
@@ -342,13 +342,13 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                   <tr className="border-b border-slate-100">
                     <th className="text-left px-4 py-3 font-semibold text-slate-600">What Changes</th>
                     <th className="text-left px-4 py-3 font-semibold" style={{ color: '#dc2626' }}>Before (Formsort/Embeddables)</th>
-                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (OLH Builder)</th>
+                    <th className="text-left px-4 py-3 font-semibold" style={{ color: ACCENT }}>After (Custom Builder)</th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
                     ['Setup Time', '2 months', '2 days'],
-                    ['Who Builds Forms', 'OLH team', 'Client self-service'],
+                    ['Who Builds Forms', 'Internal team', 'Client self-service'],
                     ['Protocol Validation', 'Manual', 'Automatic built-in'],
                     ['Integration', 'Custom API work', 'Native to platform'],
                     ['Platform Completeness', 'Missing piece', 'End-to-end'],
@@ -368,7 +368,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
               <div className="grid sm:grid-cols-2 gap-2">
                 {[
                   '30x faster client onboarding (2 months \u2192 2 days)',
-                  'Self-service = less OLH team burden',
+                  'Self-service = less Internal team burden',
                   'Built-in MWL Clinical Protocol validator',
                   'Seamless integration with scheduling, labs, meds, fulfillment',
                   'Complete platform ownership',
@@ -467,7 +467,7 @@ export default function BaseCampExtras({ visible }: { visible: boolean }) {
                 <tbody>
                   {[
                     ['Setup Time', '8 weeks', '2 days', '28x faster'],
-                    ['OLH Hours/Client', '40\u201360 hrs', '2 hrs', '95% less'],
+                    ['Team Hours/Client', '40\u201360 hrs', '2 hrs', '95% less'],
                     ['Integration Success', '85%', '99%', '+14%'],
                     ['Cost/Client', '$5,000', '$200', '96% savings'],
                   ].map((row, i) => (

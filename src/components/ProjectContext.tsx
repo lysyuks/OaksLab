@@ -28,7 +28,7 @@ export default function ProjectContext() {
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-3">Project Context</h2>
           <p className="text-slate-400 max-w-xl mx-auto">
-            Why OpenLoop is building this — and what changes for our clients.
+            Why we built this — and what changes for the client's customers.
           </p>
         </div>
 
@@ -119,7 +119,7 @@ export default function ProjectContext() {
               {[
                 'Self-service setup in days, not months',
                 'Protocol-first: clinical rules as config',
-                'Pre-built OpenLoop integrations',
+                'Pre-built platform integrations',
                 'Automated compliance validation',
                 'Full e2e platform ownership',
               ].map((item, i) => (

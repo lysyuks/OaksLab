@@ -11,7 +11,7 @@ interface Role {
 
 const roles: Role[] = [
   {
-    title: 'OLH Platform Admin',
+    title: 'Platform Admin',
     icon: '🛡️',
     color: '#1e40af',
     permissions: [

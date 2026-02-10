@@ -4,7 +4,7 @@ const ACCENT = '#ef4444';
 
 const participants = [
   { role: '2–3 Client Admins', desc: 'From different clinics', icon: '⚙️' },
-  { role: '1 OLH Platform Admin', desc: 'Internal power user', icon: '🛡️' },
+  { role: '1 Platform Admin', desc: 'Internal power user', icon: '🛡️' },
   { role: '2 Healthcare Providers', desc: 'Doctors who review forms', icon: '🩺' },
   { role: '2–3 End Patients', desc: 'Volunteer testers', icon: '🧑‍⚕️' },
 ];
